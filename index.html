@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rizoma Space - Arriendo de contenedores para residuos no peligrosos en Temuco. Servicio rápido y confiable de retiro de escombros.">
+  <title>Rizoma Space | Arriendo de Contenedores - Temuco</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header__container">
+      <a href="#" class="header__logo">
+        <img src="img/logo.png" alt="Rizoma Space" class="header__logo-img" onerror="this.style.display='none'">
+        <span class="header__logo-text">Rizoma <span>Space</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#inicio" class="nav__link">Inicio</a></li>
+          <li><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="#galeria" class="nav__link">Galería</a></li>
+          <li><a href="#como-funciona" class="nav__link">Cómo Funciona</a></li>
+          <li><a href="#certificacion" class="nav__link">Certificación</a></li>
+          <li><a href="#cobertura" class="nav__link">Cobertura</a></li>
+          <li><a href="#contacto" class="nav__link">Contacto</a></li>
+        </ul>
+      </nav>
+      <a href="https://wa.me/56986618409" target="_blank" class="btn btn--whatsapp-header">
+        <i class="fab fa-whatsapp"></i> +56 9 8661 8409
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <div class="hero__overlay"></div>
+    <div class="container hero__container">
+      <div class="hero__content">
+        <span class="hero__badge">Arriendo de Contenedores en Temuco</span>
+        <div class="hero__cert-badge">
+          <i class="fas fa-certificate"></i>
+          <span>Certificados con <strong>Resolución Sanitaria</strong> para residuos no peligrosos</span>
+        </div>
+        <h1 class="hero__title">
+          Retiro de Residuos <span>No Peligrosos</span><br>
+          Sin Complicaciones
+        </h1>
+        <p class="hero__subtitle">
+          Solucionamos la gestión de residuos no peligrosos para tu empresa o proyecto.
+          Te dejamos el contenedor, lo llenas a tu ritmo y nosotros lo retiramos con la 
+          certificación sanitaria que garantiza una disposición final responsable.
+        </p>
+        <div class="hero__actions">
+          <a href="https://wa.me/56986618409" target="_blank" class="btn btn--primary">
+            <i class="fab fa-whatsapp"></i> Cotiza por WhatsApp
+          </a>
+          <a href="#servicios" class="btn btn--outline">Ver Servicios</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__image-box">
+          <img src="img/gallery-1.jpg" alt="Contenedor Rizoma Space" class="hero__image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted Bar -->
+  <section class="trusted">
+    <div class="container trusted__container">
+      <div class="trusted__item">
+        <span class="trusted__number">+50</span>
+        <span class="trusted__label">Proyectos Completados</span>
+      </div>
+      <div class="trusted__item">
+        <span class="trusted__number">100%</span>
+        <span class="trusted__label">Cobertura Temuco</span>
+      </div>
+      <div class="trusted__item">
+        <span class="trusted__number">24/7</span>
+        <span class="trusted__label">Atención al Cliente</span>
+      </div>
+      <div class="trusted__item">
+        <span class="trusted__number">+5</span>
+        <span class="trusted__label">Años de Experiencia</span>
+      </div>
+      <div class="trusted__item">
+        <span class="trusted__number"><i class="fas fa-certificate"></i></span>
+        <span class="trusted__label">Resolución Sanitaria</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="servicios">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Nuestros <span>Servicios</span></h2>
+        <p class="section__desc">
+          Ofrecemos soluciones simples para la gestión de residuos no peligrosos 
+          en Temuco y sus alrededores. Servicio para constructoras, particulares, 
+          empresas y proyectos de toda escala.
+        </p>
+      </div>
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <h3 class="service-card__title">Arriendo de Contenedores</h3>
+          <p class="service-card__desc">
+            Contenedores de distintas capacidades para residuos no peligrosos. 
+            Los dejamos en tu ubicación y los retiramos cuando tú decidas.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <i class="fas fa-recycle"></i>
+          </div>
+          <h3 class="service-card__title">Retiro de Residuos No Peligrosos</h3>
+          <p class="service-card__desc">
+            Nos encargamos del retiro y disposición final de escombros, 
+            tierra, hormigón, maderas y otros residuos no peligrosos.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <i class="fas fa-home"></i>
+          </div>
+          <h3 class="service-card__title">Limpieza de Terrenos</h3>
+          <p class="service-card__desc">
+            Preparación y limpieza de terrenos para construcción, 
+            demoliciones parciales o despeje completo de tu propiedad.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works" id="como-funciona">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">¿Cómo <span>Funciona?</span></h2>
+        <p class="section__desc">
+          Tres pasos simples para solucionar tus residuos.
+        </p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__number">1</div>
+          <div class="step__content">
+            <h3>Nos Contactas</h3>
+            <p>Escríbenos por WhatsApp o llámanos. Cuéntanos qué necesitas y te daremos el contenedor adecuado.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__number">2</div>
+          <div class="step__content">
+            <h3>Instalamos el Contenedor</h3>
+            <p>Llevamos el contenedor a tu domicilio, obra o terreno. Lo llenas en los días que acordemos.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step__number">3</div>
+          <div class="step__content">
+            <h3>Lo Retiramos</h3>
+            <p>Pasamos a buscar el contenedor y nos encargamos de la disposición final responsable de los residuos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery" id="galeria">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Galería de <span>Trabajos</span></h2>
+        <p class="section__desc">
+          Conoce algunos de los proyectos donde hemos entregado nuestros servicios 
+          de arriendo de contenedores y retiro de residuos en Temuco.
+        </p>
+      </div>
+      <div class="gallery__grid">
+        <div class="gallery__item">
+          <img src="img/gallery-1.jpg" alt="Contenedor Rizoma Space en obra" loading="lazy">
+        </div>
+        <div class="gallery__item">
+          <img src="img/gallery-2.jpg" alt="Retiro de escombros Rizoma Space" loading="lazy">
+        </div>
+        <div class="gallery__item">
+          <img src="img/gallery-3.jpg" alt="Contenedor para residuos no peligrosos" loading="lazy">
+        </div>
+        <div class="gallery__item">
+          <img src="img/gallery-4.jpg" alt="Servicio de contenedor Rizoma Space" loading="lazy">
+        </div>
+        <div class="gallery__item">
+          <img src="img/gallery-5.jpg" alt="Camión contenedor Rizoma Space" loading="lazy">
+        </div>
+        <div class="gallery__item">
+          <img src="img/gallery-6.jpg" alt="Proyecto Rizoma Space Temuco" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certification -->
+  <section class="certification" id="certificacion">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Resolución <span>Sanitaria</span></h2>
+        <p class="section__desc">
+          Trabajamos con todas las garantías legales y ambientales para tu tranquilidad.
+        </p>
+      </div>
+      <div class="certification__card">
+        <div class="certification__icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Certificados para Residuos No Peligrosos</h3>
+        <p>
+          Contamos con <strong>Resolución Sanitaria</strong> que nos autoriza para la recolección, 
+          transporte y disposición final de residuos no peligrosos (escombros, tierra, hormigón, 
+          maderas, etc.). Esto asegura que tu empresa cumple con la normativa vigente al contratar 
+          nuestros servicios, evitando multas y problemas legales.
+        </p>
+        <div class="certification__badges">
+          <div class="cert-badge">
+            <i class="fas fa-check-circle"></i>
+            <span>Recolección Autorizada</span>
+          </div>
+          <div class="cert-badge">
+            <i class="fas fa-check-circle"></i>
+            <span>Transporte Certificado</span>
+          </div>
+          <div class="cert-badge">
+            <i class="fas fa-check-circle"></i>
+            <span>Disposición Final Responsable</span>
+          </div>
+        </div>
+        <a href="https://wa.me/56986618409" target="_blank" class="btn btn--primary">
+          <i class="fab fa-whatsapp"></i> Solicita más información
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coverage -->
+  <section class="coverage" id="cobertura">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Cobertura en <span>Temuco</span></h2>
+        <p class="section__desc">
+          Cubrimos toda la comuna de Temuco y sectores aledaños. 
+          Consúltanos si tu ubicación está dentro de nuestra zona de servicio.
+        </p>
+      </div>
+      <div class="coverage__map">
+        <div class="coverage__placeholder">
+          <i class="fas fa-map-marked-alt"></i>
+          <p>Área de cobertura: <strong>Temuco</strong> y alrededores</p>
+          <a href="https://wa.me/56986618409" target="_blank" class="btn btn--primary">
+            <i class="fab fa-whatsapp"></i> Consulta si llegamos a tu sector
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__container">
+      <h2 class="cta__title">¿Listo para Gestionar tus Residuos?</h2>
+      <p class="cta__desc">Contáctanos hoy y te enviamos el contenedor que necesitas.</p>
+      <a href="https://wa.me/56986618409" target="_blank" class="btn btn--primary btn--large">
+        <i class="fab fa-whatsapp"></i> Cotiza Ahora
+      </a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Contácta <span>con Nosotros</span></h2>
+        <p class="section__desc">
+          Estamos listos para ayudarte. Elige el canal que prefieras.
+        </p>
+      </div>
+      <div class="contact__grid">
+        <div class="contact__card">
+          <div class="contact__card-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h3>WhatsApp</h3>
+          <p>Respuesta rápida</p>
+          <a href="https://wa.me/56986618409" target="_blank" class="btn btn--whatsapp">+56 9 8661 8409</a>
+          <a href="https://wa.me/56988115108" target="_blank" class="btn btn--whatsapp" style="margin-top: 8px;">+56 9 8811 5108</a>
+        </div>
+        <div class="contact__card">
+          <div class="contact__card-icon">
+            <i class="far fa-envelope"></i>
+          </div>
+          <h3>Email</h3>
+          <p>Escríbenos cuando quieras</p>
+          <a href="mailto:spacerizoma@gmail.com" class="btn btn--email">spacerizoma@gmail.com</a>
+        </div>
+        <div class="contact__card">
+          <div class="contact__card-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3>Ubicación</h3>
+          <p>Temuco, Chile</p>
+          <span class="contact__link">Te cubrimos en toda la comuna</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__brand">
+        <img src="img/logo.png" alt="Rizoma Space" class="footer__logo-img" onerror="this.style.display='none'">
+        <p class="footer__text">
+          Rizoma Space - Soluciones simples para la gestión de residuos no peligrosos en Temuco.
+        </p>
+      </div>
+      <div class="footer__links">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#como-funciona">Cómo Funciona</a></li>
+          <li><a href="#certificacion">Certificación</a></li>
+          <li><a href="#cobertura">Cobertura</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/56986618409" target="_blank"><i class="fab fa-whatsapp"></i> +56 9 8661 8409</a>
+        <a href="https://wa.me/56988115108" target="_blank"><i class="fab fa-whatsapp"></i> +56 9 8811 5108</a>
+        <a href="mailto:spacerizoma@gmail.com"><i class="far fa-envelope"></i> spacerizoma@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 Rizoma Space. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/56986618409" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
