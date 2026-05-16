@@ -9,7 +9,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -262,7 +262,7 @@ ul {
 
 /* ===== Hero ===== */
 .hero {
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -328,8 +328,8 @@ ul {
 .hero__row {
   position: relative;
   z-index: 1;
-  padding-top: 100px;
-  padding-bottom: 60px;
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 
 .hero__title {
@@ -356,12 +356,12 @@ ul {
 }
 
 .hero__image-box {
-  width: 480px;
+  width: 440px;
   max-width: 100%;
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
-  border: 4px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   aspect-ratio: 4 / 3;
   transition: all var(--transition);
   animation: float 6s ease-in-out infinite;
@@ -991,12 +991,16 @@ textarea.form-control {
 
   .hero {
     min-height: auto;
-    padding: 140px 0 80px;
+    padding: 150px 0 80px;
   }
 
   .hero__row {
     padding-top: 0;
     padding-bottom: 0;
+  }
+
+  .hero__image-box {
+    width: 360px;
   }
 
   .hero__title {
@@ -1016,7 +1020,7 @@ textarea.form-control {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 130px 0 60px;
+    padding: 150px 0 60px;
   }
 
   .hero__title {
@@ -1121,7 +1125,7 @@ textarea.form-control {
 
 @media (max-width: 480px) {
   .hero {
-    padding: 110px 0 50px;
+    padding: 130px 0 50px;
   }
 
   .hero__title {
