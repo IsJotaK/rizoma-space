@@ -30,13 +30,11 @@ body {
 }
 
 .hero,
-.trusted,
 .services,
 .how-it-works,
 .gallery,
 .certification,
 .coverage,
-.cta,
 .quote,
 .contact {
   scroll-snap-align: start;
@@ -423,45 +421,38 @@ ul {
 }
 
 /* ===== Trusted Bar ===== */
-.trusted {
-  background: var(--white);
-  padding: 48px 0;
-  border-bottom: 1px solid var(--gray-200);
-}
-
-.trusted .col-md {
+.trusted-bar .col-md {
   position: relative;
-  padding: 0 24px;
 }
 
-.trusted .col-md:not(:last-child)::after {
+.trusted-bar .col-md:not(:last-child)::after {
   content: '';
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 1px;
-  height: 40px;
+  height: 32px;
   background: var(--gray-200);
 }
 
 @media (max-width: 767px) {
-  .trusted .col-md:not(:last-child)::after {
+  .trusted-bar .col-md:not(:last-child)::after {
     display: none;
   }
 }
 
 .trusted__number {
   display: block;
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 800;
   color: var(--green-600);
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .trusted__label {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--gray-400);
   font-weight: 500;
 }
@@ -793,36 +784,6 @@ ul {
   margin-bottom: 24px;
 }
 
-/* ===== CTA ===== */
-.cta {
-  padding: 100px 0;
-  background: linear-gradient(135deg, var(--green-800), var(--green-700));
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.cta::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.cta__title {
-  font-size: 38px;
-  font-weight: 800;
-  color: var(--white);
-  margin-bottom: 16px;
-}
-
-.cta__desc {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 32px;
-}
-
 /* ===== Quote Form ===== */
 .quote {
   padding: 100px 0;
@@ -1111,7 +1072,6 @@ textarea.form-control {
   .gallery,
   .certification,
   .coverage,
-  .cta,
   .quote,
   .contact {
     padding: 60px 0;
@@ -1152,14 +1112,6 @@ textarea.form-control {
 
   .certification__card {
     padding: 40px 24px;
-  }
-
-  .cta__title {
-    font-size: 28px;
-  }
-
-  .cta__desc {
-    font-size: 16px;
   }
 
   .quote__form {
@@ -1222,7 +1174,6 @@ textarea.form-control {
   .gallery,
   .certification,
   .coverage,
-  .cta,
   .quote,
   .contact {
     padding: 48px 0;
