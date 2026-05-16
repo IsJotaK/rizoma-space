@@ -13,15 +13,28 @@ document.querySelectorAll('.nav__link').forEach(link => {
   });
 });
 
-// Header shadow on scroll
+// Header on scroll
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
     header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+    header.style.borderBottomColor = 'rgba(0,0,0,0.06)';
   } else {
     header.style.boxShadow = 'none';
+    header.style.borderBottomColor = 'var(--gray-200)';
   }
 });
+
+// Scroll reveal animations
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // Quote form - send via WhatsApp
 const quoteForm = document.getElementById('quoteForm');

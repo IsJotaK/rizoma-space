@@ -39,6 +39,34 @@ ul {
   padding: 0 24px;
 }
 
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
 /* ===== Colors ===== */
 :root {
   --green-900: #0d3b1e;
@@ -57,10 +85,14 @@ ul {
   --gray-400: #8888a0;
   --gray-200: #e2e2ea;
   --gray-100: #f5f5f8;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.16);
   --radius: 12px;
   --radius-lg: 20px;
+  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* ===== Buttons ===== */
@@ -68,13 +100,28 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 28px;
+  padding: 14px 32px;
   font-size: 15px;
   font-weight: 600;
   border-radius: 50px;
-  transition: all 0.3s ease;
+  transition: all var(--transition);
   cursor: pointer;
   border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn:hover::after {
+  transform: translateX(0);
 }
 
 .btn--primary {
@@ -256,8 +303,19 @@ ul {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 80% 20%, rgba(46, 204, 113, 0.2) 0%, transparent 60%),
-              radial-gradient(ellipse at 20% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(46, 204, 113, 0.25) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero__pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.03) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
   pointer-events: none;
 }
 
@@ -352,6 +410,11 @@ ul {
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
   animation: float 6s ease-in-out infinite;
   aspect-ratio: 4 / 3;
+  transition: border-color var(--transition);
+}
+
+.hero__image-box:hover {
+  border-color: rgba(46, 204, 113, 0.4);
 }
 
 .hero__image {
@@ -369,7 +432,7 @@ ul {
 /* ===== Trusted Bar ===== */
 .trusted {
   background: var(--white);
-  padding: 40px 0;
+  padding: 48px 0;
   border-bottom: 1px solid var(--gray-200);
 }
 
@@ -377,25 +440,40 @@ ul {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 32px;
 }
 
 .trusted__item {
   text-align: center;
+  padding: 0 16px;
+  position: relative;
+}
+
+.trusted__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 40px;
+  background: var(--gray-200);
 }
 
 .trusted__number {
   display: block;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
   color: var(--green-600);
+  line-height: 1;
+  margin-bottom: 4px;
 }
 
 .trusted__label {
   display: block;
   font-size: 14px;
   color: var(--gray-400);
-  margin-top: 4px;
+  font-weight: 500;
 }
 
 /* ===== Section Shared ===== */
@@ -440,15 +518,34 @@ ul {
   background: var(--white);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg);
-  padding: 40px 32px;
-  transition: all 0.4s ease;
+  padding: 44px 36px;
+  transition: all var(--transition);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green-500), var(--green-600));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
 }
 
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
-  border-color: var(--green-200);
+  border-color: transparent;
 }
 
 .service-card__icon {
@@ -494,7 +591,17 @@ ul {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  position: relative;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 60px;
+  bottom: 60px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--green-300), var(--green-500));
 }
 
 .step {
@@ -504,12 +611,21 @@ ul {
   background: var(--white);
   padding: 32px;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: transform 0.3s;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+  position: relative;
+  margin-bottom: 32px;
+  border: 1px solid var(--gray-200);
+}
+
+.step:last-child {
+  margin-bottom: 0;
 }
 
 .step:hover {
   transform: translateX(8px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--green-200);
 }
 
 .step__number {
@@ -517,13 +633,16 @@ ul {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--green-600);
+  background: linear-gradient(135deg, var(--green-600), var(--green-500));
   color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
   font-weight: 800;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(34, 139, 74, 0.3);
 }
 
 .step__content h3 {
@@ -556,12 +675,26 @@ ul {
   overflow: hidden;
   aspect-ratio: 4 / 3;
   cursor: pointer;
-  transition: transform 0.4s, box-shadow 0.4s;
+  transition: all var(--transition);
+  position: relative;
+}
+
+.gallery__item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent 50%);
+  opacity: 0;
+  transition: opacity var(--transition);
 }
 
 .gallery__item:hover {
   transform: scale(1.03);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-xl);
+}
+
+.gallery__item:hover::after {
+  opacity: 1;
 }
 
 .gallery__item img {
@@ -569,7 +702,7 @@ ul {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .gallery__item:hover img {
@@ -678,6 +811,16 @@ ul {
   padding: 100px 0;
   background: linear-gradient(135deg, var(--green-800), var(--green-700));
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .cta__title {
@@ -731,9 +874,9 @@ ul {
 .quote__field select,
 .quote__field textarea {
   width: 100%;
-  padding: 12px 16px;
-  border: 1.5px solid var(--gray-200);
-  border-radius: 10px;
+  padding: 14px 18px;
+  border: 2px solid var(--gray-200);
+  border-radius: 12px;
   font-family: inherit;
   font-size: 15px;
   color: var(--dark);
@@ -746,7 +889,17 @@ ul {
 .quote__field select:focus,
 .quote__field textarea:focus {
   border-color: var(--green-500);
-  box-shadow: 0 0 0 3px var(--green-100);
+  box-shadow: 0 0 0 4px var(--green-100);
+}
+
+.quote__field input:user-invalid,
+.quote__field textarea:user-invalid {
+  border-color: #ef4444;
+}
+
+.quote__field input:user-invalid:focus,
+.quote__field textarea:user-invalid:focus {
+  box-shadow: 0 0 0 4px #fef2f2;
 }
 
 .quote__field textarea {
@@ -1019,6 +1172,10 @@ ul {
 
   .cta__title {
     font-size: 30px;
+  }
+
+  .trusted__item:not(:last-child)::after {
+    display: none;
   }
 
   .footer__container {
