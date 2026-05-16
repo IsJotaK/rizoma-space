@@ -57,7 +57,10 @@ rizoma-space/
 - Imagen de portada desde galería
 
 ## Pendientes / Ideas
-- (lista de cosas por hacer o mejorar)
+- Construir app con base de datos (Supabase + RLS) para que empresas
+  se registren, vean su historial de pedidos, y cada una solo acceda a
+  sus propios datos. Stack: Next.js + Supabase + Vercel.
+- (más ideas aquí)
 
 ## Cómo Desplegar Cambios
 ```powershell
