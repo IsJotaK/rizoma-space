@@ -498,6 +498,7 @@ ul {
   text-align: center;
   position: relative;
   overflow: hidden;
+  transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
 }
 
 .service-card::before {
@@ -518,7 +519,7 @@ ul {
 }
 
 .service-card:hover {
-  transform: translateY(-8px);
+  transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: transparent;
 }
@@ -651,6 +652,7 @@ ul {
   cursor: pointer;
   transition: all var(--transition);
   position: relative;
+  transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
 }
 
 .gallery__item::after {
@@ -663,7 +665,7 @@ ul {
 }
 
 .gallery__item:hover {
-  transform: scale(1.03);
+  transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale(1.03);
   box-shadow: var(--shadow-xl);
 }
 
@@ -853,12 +855,13 @@ textarea.form-control {
   border-radius: var(--radius-lg);
   border: 1px solid var(--gray-200);
   transition: all 0.3s;
+  transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
 }
 
 .contact__card:hover {
   box-shadow: var(--shadow-lg);
   border-color: var(--green-200);
-  transform: translateY(-4px);
+  transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-4px);
 }
 
 .contact__card-icon {

@@ -71,6 +71,26 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
 
+// 3D Tilt effect on cards
+document.querySelectorAll('.tilt').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const w = rect.width;
+    const h = rect.height;
+    const rx = ((y - h / 2) / h) * -8;
+    const ry = ((x - w / 2) / w) * 8;
+    card.style.setProperty('--rx', rx + 'deg');
+    card.style.setProperty('--ry', ry + 'deg');
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.setProperty('--rx', '0deg');
+    card.style.setProperty('--ry', '0deg');
+  });
+});
+
 // Quote form - send via WhatsApp
 const quoteForm = document.getElementById('quoteForm');
 quoteForm.addEventListener('submit', (e) => {
