@@ -9,7 +9,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 70px;
 }
 
 body {
@@ -17,6 +17,23 @@ body {
   color: #1a1a2e;
   line-height: 1.6;
   background: #fff;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+/* Scroll snap sections */
+.hero,
+.trusted,
+.services,
+.how-it-works,
+.gallery,
+.certification,
+.coverage,
+.cta,
+.quote,
+.contact,
+.footer {
+  scroll-snap-align: start;
 }
 
 img {
@@ -101,11 +118,15 @@ ul {
   transition: all 0.3s ease;
   padding-top: 0;
   padding-bottom: 0;
-  min-height: 72px;
+  min-height: 56px;
+}
+
+.navbar-brand img {
+  height: 28px;
 }
 
 .header__logo-text {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--green-800);
 }
@@ -115,12 +136,12 @@ ul {
 }
 
 .nav-link {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--gray-600) !important;
   transition: color 0.3s;
   position: relative;
-  padding: 8px 12px !important;
+  padding: 4px 10px !important;
 }
 
 .nav-link::after {
@@ -233,8 +254,8 @@ ul {
 .btn--whatsapp-header {
   background: #25d366;
   color: var(--white);
-  padding: 8px 20px;
-  font-size: 14px;
+  padding: 6px 16px;
+  font-size: 13px;
   border-color: transparent;
 }
 
