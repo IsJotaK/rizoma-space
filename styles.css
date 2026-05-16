@@ -453,7 +453,10 @@ ul {
 /* ===== Services ===== */
 .services {
   padding: 100px 0;
-  background: var(--white);
+  background:
+    radial-gradient(ellipse at 0% 40%, rgba(46, 204, 113, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 60%, rgba(13, 59, 30, 0.04) 0%, transparent 50%),
+    var(--white);
 }
 
 .service-card {
@@ -525,7 +528,10 @@ ul {
 /* ===== How It Works ===== */
 .how-it-works {
   padding: 100px 0;
-  background: var(--green-50);
+  background:
+    radial-gradient(ellipse at 100% 20%, rgba(46, 204, 113, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 0% 80%, rgba(13, 59, 30, 0.05) 0%, transparent 50%),
+    var(--green-50);
 }
 
 .steps {
@@ -602,7 +608,10 @@ ul {
 /* ===== Gallery ===== */
 .gallery {
   padding: 100px 0;
-  background: var(--green-50);
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(46, 204, 113, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(13, 59, 30, 0.04) 0%, transparent 50%),
+    var(--green-50);
 }
 
 .gallery__item {
@@ -647,7 +656,10 @@ ul {
 /* ===== Certification ===== */
 .certification {
   padding: 100px 0;
-  background: var(--white);
+  background:
+    radial-gradient(ellipse at 80% 30%, rgba(46, 204, 113, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 70%, rgba(13, 59, 30, 0.04) 0%, transparent 50%),
+    var(--white);
 }
 
 .certification__card {
@@ -711,7 +723,10 @@ ul {
 /* ===== Coverage ===== */
 .coverage {
   padding: 100px 0;
-  background: var(--white);
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(46, 204, 113, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(13, 59, 30, 0.03) 0%, transparent 50%),
+    var(--white);
 }
 
 .coverage__map {
@@ -772,7 +787,10 @@ ul {
 /* ===== Quote Form ===== */
 .quote {
   padding: 100px 0;
-  background: var(--green-50);
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(46, 204, 113, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(13, 59, 30, 0.05) 0%, transparent 50%),
+    var(--green-50);
 }
 
 .quote__form {
@@ -823,7 +841,10 @@ textarea.form-control {
 /* ===== Contact ===== */
 .contact {
   padding: 100px 0;
-  background: var(--white);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(46, 204, 113, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 100%, rgba(13, 59, 30, 0.04) 0%, transparent 50%),
+    var(--white);
 }
 
 .contact__card {
