@@ -37,7 +37,7 @@ quoteForm.addEventListener('submit', (e) => {
   const location = document.getElementById('location').value.trim();
   const message = document.getElementById('message').value.trim();
 
-  const serviceLabels = { 'arriendo-contenedor': 'Arriendo de Contenedor', 'retiro-residuos': 'Retiro de Residuos No Peligrosos', 'limpieza-terreno': 'Limpieza de Terreno', 'otro': 'Otro' };
+  const serviceLabels = { 'arriendo-contenedor': 'Arriendo de Contenedor', 'retiro-residuos': 'Retiro de Residuos No Peligrosos', 'otro': 'Otro' };
   const volumeLabels = { 'pequeno': 'Pequeño (menos de 3m³)', 'mediano': 'Mediano (3m³ - 7m³)', 'grande': 'Grande (más de 7m³)', 'no-seguro': 'No estoy seguro' };
 
   let whatsappMsg = `Hola Rizoma Space, quiero cotizar:%0A%0A`;
