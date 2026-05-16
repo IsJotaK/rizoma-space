@@ -23,10 +23,10 @@
         <ul class="nav__list">
           <li><a href="#inicio" class="nav__link">Inicio</a></li>
           <li><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="#cotizacion" class="nav__link nav__link--cta">Cotizar</a></li>
           <li><a href="#galeria" class="nav__link">Galería</a></li>
           <li><a href="#como-funciona" class="nav__link">Cómo Funciona</a></li>
           <li><a href="#certificacion" class="nav__link">Certificación</a></li>
-          <li><a href="#cobertura" class="nav__link">Cobertura</a></li>
           <li><a href="#contacto" class="nav__link">Contacto</a></li>
         </ul>
       </nav>
@@ -286,6 +286,73 @@
       <a href="https://wa.me/56986618409" target="_blank" class="btn btn--primary btn--large">
         <i class="fab fa-whatsapp"></i> Cotiza Ahora
       </a>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section class="quote" id="cotizacion">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">Solicita tu <span>Cotización</span></h2>
+        <p class="section__desc">
+          Cuéntanos qué necesitas y te responderemos en minutos.
+        </p>
+      </div>
+      <form class="quote__form" id="quoteForm">
+        <div class="quote__row">
+          <div class="quote__field">
+            <label for="name">Nombre completo *</label>
+            <input type="text" id="name" name="name" required placeholder="Tu nombre">
+          </div>
+          <div class="quote__field">
+            <label for="company">Empresa</label>
+            <input type="text" id="company" name="company" placeholder="Nombre de tu empresa">
+          </div>
+        </div>
+        <div class="quote__row">
+          <div class="quote__field">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="correo@ejemplo.cl">
+          </div>
+          <div class="quote__field">
+            <label for="phone">Teléfono *</label>
+            <input type="tel" id="phone" name="phone" required placeholder="+56 9 XXXX XXXX">
+          </div>
+        </div>
+        <div class="quote__row">
+          <div class="quote__field">
+            <label for="service">Tipo de servicio</label>
+            <select id="service" name="service">
+              <option value="">Selecciona...</option>
+              <option value="arriendo-contenedor">Arriendo de Contenedor</option>
+              <option value="retiro-residuos">Retiro de Residuos No Peligrosos</option>
+              <option value="limpieza-terreno">Limpieza de Terreno</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="quote__field">
+            <label for="volume">Volumen estimado</label>
+            <select id="volume" name="volume">
+              <option value="">Selecciona...</option>
+              <option value="pequeno">Pequeño (menos de 3m³)</option>
+              <option value="mediano">Mediano (3m³ - 7m³)</option>
+              <option value="grande">Grande (más de 7m³)</option>
+              <option value="no-seguro">No estoy seguro</option>
+            </select>
+          </div>
+        </div>
+        <div class="quote__field">
+          <label for="location">Dirección del servicio</label>
+          <input type="text" id="location" name="location" placeholder="Temuco, sector / calle">
+        </div>
+        <div class="quote__field">
+          <label for="message">Mensaje o detalles adicionales</label>
+          <textarea id="message" name="message" rows="4" placeholder="Cuéntanos más sobre tu proyecto..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--large quote__submit">
+          <i class="fab fa-whatsapp"></i> Enviar cotización por WhatsApp
+        </button>
+      </form>
     </div>
   </section>
 

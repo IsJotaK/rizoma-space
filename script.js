@@ -22,3 +22,33 @@ window.addEventListener('scroll', () => {
     header.style.boxShadow = 'none';
   }
 });
+
+// Quote form - send via WhatsApp
+const quoteForm = document.getElementById('quoteForm');
+quoteForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const company = document.getElementById('company').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const service = document.getElementById('service').value;
+  const volume = document.getElementById('volume').value;
+  const location = document.getElementById('location').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  const serviceLabels = { 'arriendo-contenedor': 'Arriendo de Contenedor', 'retiro-residuos': 'Retiro de Residuos No Peligrosos', 'limpieza-terreno': 'Limpieza de Terreno', 'otro': 'Otro' };
+  const volumeLabels = { 'pequeno': 'Pequeño (menos de 3m³)', 'mediano': 'Mediano (3m³ - 7m³)', 'grande': 'Grande (más de 7m³)', 'no-seguro': 'No estoy seguro' };
+
+  let whatsappMsg = `Hola Rizoma Space, quiero cotizar:%0A%0A`;
+  whatsappMsg += `*Nombre:* ${name}%0A`;
+  if (company) whatsappMsg += `*Empresa:* ${company}%0A`;
+  whatsappMsg += `*Email:* ${email}%0A`;
+  whatsappMsg += `*Teléfono:* ${phone}%0A`;
+  if (service) whatsappMsg += `*Servicio:* ${serviceLabels[service]}%0A`;
+  if (volume) whatsappMsg += `*Volumen:* ${volumeLabels[volume]}%0A`;
+  if (location) whatsappMsg += `*Dirección:* ${location}%0A`;
+  if (message) whatsappMsg += `*Mensaje:* ${message}%0A`;
+
+  window.open(`https://wa.me/56986618409?text=${whatsappMsg}`, '_blank');
+});
