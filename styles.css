@@ -21,15 +21,16 @@ body {
   overflow: hidden;
 }
 
-/* Scroll snap */
+/* Scroll snap - full page sections */
 #app {
   height: 100vh;
   overflow-y: scroll;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
 .hero,
+.trusted,
 .services,
 .how-it-works,
 .gallery,
@@ -40,6 +41,17 @@ body {
 .contact {
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  height: 100vh;
+  overflow-y: auto;
+  padding-top: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Footer excluded from snap */
+.footer {
+  padding-top: 56px;
 }
 
 img {
