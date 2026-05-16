@@ -1,20 +1,18 @@
-// Mobile nav toggle
-const navToggle = document.getElementById('navToggle');
-const nav = document.getElementById('nav');
+// Close mobile nav on link click
+const navLinks = document.querySelectorAll('.nav-link');
+const navbarCollapse = document.getElementById('navbarNav');
+const bsCollapse = navbarCollapse ? new bootstrap.Collapse(navbarCollapse, { toggle: false }) : null;
 
-navToggle.addEventListener('click', () => {
-  nav.classList.toggle('active');
-});
-
-// Close nav on link click
-document.querySelectorAll('.nav__link').forEach(link => {
+navLinks.forEach(link => {
   link.addEventListener('click', () => {
-    nav.classList.remove('active');
+    if (bsCollapse && navbarCollapse.classList.contains('show')) {
+      bsCollapse.hide();
+    }
   });
 });
 
-// Header on scroll
-const header = document.getElementById('header');
+// Header shadow on scroll
+const header = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
     header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
