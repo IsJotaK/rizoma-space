@@ -1087,11 +1087,16 @@ ul {
 
 /* ===== Responsive ===== */
 @media (max-width: 968px) {
+  .hero {
+    min-height: auto;
+    padding: 140px 0 80px;
+  }
+
   .hero__container {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 40px;
-    padding-top: 100px;
+    padding-top: 0;
   }
 
   .hero__title {
@@ -1163,22 +1168,28 @@ ul {
 
   .hero {
     min-height: auto;
-    padding: 120px 0 60px;
+    padding: 130px 0 60px;
   }
 
   .hero__container {
     padding-top: 0;
-    gap: 32px;
+    gap: 28px;
   }
 
   .hero__title {
     font-size: 32px;
   }
 
+  .hero__badge {
+    font-size: 12px;
+    padding: 6px 16px;
+  }
+
   .hero__cert-badge {
     font-size: 12px;
     padding: 8px 16px;
     text-align: left;
+    flex-wrap: wrap;
   }
 
   .hero__subtitle {
@@ -1191,7 +1202,7 @@ ul {
   }
 
   .hero__image-box {
-    width: 300px;
+    width: 280px;
   }
 
   .services,
@@ -1301,13 +1312,17 @@ ul {
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 110px 0 50px;
+  }
+
   .hero__title {
     font-size: 26px;
   }
 
   .hero__badge {
-    font-size: 12px;
-    padding: 6px 16px;
+    font-size: 11px;
+    padding: 5px 14px;
   }
 
   .hero__cert-badge {
@@ -1315,6 +1330,7 @@ ul {
     padding: 6px 14px;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 6px;
   }
 
   .hero__subtitle {
@@ -1322,7 +1338,7 @@ ul {
   }
 
   .hero__image-box {
-    width: 240px;
+    width: 220px;
   }
 
   .hero__actions {
