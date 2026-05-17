@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow:
 
-Sitemap: https://isjotak.github.io/rizoma-space/sitemap.xml
+Sitemap: https://rizoma-space.vercel.app/sitemap.xml
