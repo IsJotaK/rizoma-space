@@ -70,3 +70,37 @@ git commit -m "descripción del cambio"
 git push
 ```
 La página se actualiza automáticamente en GitHub Pages.
+
+## Design Tips & Learnings (del video)
+Guardar para próximos proyectos:
+
+### Mesh Gradients
+- Fondos con múltiples `radial-gradient` superpuestos en distintas posiciones
+- Crean profundidad orgánica sin distraer (opacidad 3-8%)
+- Aplicar en secciones de fondo plano para darles vida
+
+### Full-Page Scroll Snap
+- `scroll-snap-type: y mandatory` en contenedor con `height: 100vh`
+- Cada sección: `height: 100vh; scroll-snap-align: start; scroll-snap-stop: always`
+- Contenido centrado verticalmente con flexbox
+- Padding-top en secciones para navbar fixed
+
+### Animaciones y Hover Effects
+- **3D Tilt**: `perspective(800px) rotateX/rotateY` siguiendo el mouse (±8° máx)
+- **Counter animation**: números cuentan desde 0 con easing cúbico vía IntersectionObserver
+- **Scroll reveal**: fadeInUp con delays escalonados (.reveal, .visible)
+- **Button sweep**: `::after` con slide overlay en botones
+- **Card gradient border**: `::before` con gradient top border en hover
+- **Image hover zoom**: scale(1.1) con overlay gradient en galería
+- **Float animation**: keyframes en hero image
+
+### Navbar / Layout
+- Bootstrap 5 vía CDN para grid, navbar, forms
+- Navbar delgada (56px min-height) con blur backdrop
+- Logo + texto de marca compactos
+- Navegación smooth con scroll-padding-top
+
+### General
+- B2B debe verse profesional, no llamativo
+- Menos es más: efectos sutiles (opacidades bajas, ángulos pequeños)
+- Mobile-first en padding, desktop en layout

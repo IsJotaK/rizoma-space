@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://isjotak.github.io/rizoma-space/sitemap.xml
