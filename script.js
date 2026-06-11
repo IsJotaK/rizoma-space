@@ -1,19 +1,24 @@
-// Close mobile nav on link click
-const navLinks = document.querySelectorAll('.nav-link');
-const navbarCollapse = document.getElementById('navbarNav');
-const bsCollapse = navbarCollapse ? new bootstrap.Collapse(navbarCollapse, { toggle: false }) : null;
+(function(){'use strict';
 
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    if (bsCollapse && navbarCollapse.classList.contains('show')) {
-      bsCollapse.hide();
-    }
+// Navbar toggle
+var navToggle = document.getElementById('navToggle');
+var navMenu = document.getElementById('navbarNav');
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', function() {
+    navMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', navMenu.classList.contains('open'));
   });
-});
+  navMenu.querySelectorAll('.nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
 
 // Header shadow on scroll
-const header = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
+var header = document.querySelector('.navbar');
+window.addEventListener('scroll', function() {
   if (window.scrollY > 50) {
     header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
     header.style.borderBottomColor = 'rgba(0,0,0,0.06)';
@@ -23,100 +28,131 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Scroll reveal animations
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+// Scroll reveal
+var revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
     }
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
 
 // Counter animation
 function animateCounter(el) {
-  const target = parseInt(el.dataset.target);
-  const duration = 1500;
-  const steps = 30;
-  const increment = target / steps;
-  let current = 0;
-  const start = performance.now();
-
+  var target = parseInt(el.dataset.target);
+  var duration = 1500;
+  var start = performance.now();
   function update(now) {
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    current = Math.round(eased * target);
-    el.textContent = current;
-    if (progress < 1) {
-      requestAnimationFrame(update);
-    } else {
-      el.textContent = target;
-    }
+    var progress = Math.min((now - start) / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target);
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = target;
   }
-
   requestAnimationFrame(update);
 }
-
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+var counterObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
     if (entry.isIntersecting) {
-      const counter = entry.target;
-      animateCounter(counter);
-      counterObserver.unobserve(counter);
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(function(el) { counterObserver.observe(el); });
 
-document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
-
-// 3D Tilt effect on cards
-document.querySelectorAll('.tilt').forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const w = rect.width;
-    const h = rect.height;
-    const rx = ((y - h / 2) / h) * -8;
-    const ry = ((x - w / 2) / w) * 8;
-    card.style.setProperty('--rx', rx + 'deg');
-    card.style.setProperty('--ry', ry + 'deg');
+// 3D Tilt
+document.querySelectorAll('.tilt').forEach(function(card) {
+  card.addEventListener('mousemove', function(e) {
+    var rect = card.getBoundingClientRect();
+    var x = e.clientX - rect.left, y = e.clientY - rect.top;
+    card.style.setProperty('--rx', ((y - rect.height/2) / rect.height * -8) + 'deg');
+    card.style.setProperty('--ry', ((x - rect.width/2) / rect.width * 8) + 'deg');
   });
-
-  card.addEventListener('mouseleave', () => {
+  card.addEventListener('mouseleave', function() {
     card.style.setProperty('--rx', '0deg');
     card.style.setProperty('--ry', '0deg');
   });
 });
 
-// Quote form - send via WhatsApp
-const quoteForm = document.getElementById('quoteForm');
-quoteForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+// Form validation & WhatsApp
+var sendBtn = document.getElementById('sendQuoteBtn');
+var newQuoteBtn = document.getElementById('newQuoteBtn');
+var toast = document.getElementById('thankyouToast');
 
-  const name = document.getElementById('name').value.trim();
-  const company = document.getElementById('company').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const service = document.getElementById('service').value;
-  const volume = document.getElementById('volume').value;
-  const location = document.getElementById('location').value.trim();
-  const message = document.getElementById('message').value.trim();
+function getVal(id) { return (document.getElementById(id) || {}).value || ''; }
+function showError(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.add('show');
+}
+function hideError(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.remove('show');
+}
+function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
 
-  const serviceLabels = { 'arriendo-contenedor': 'Arriendo de Contenedor', 'retiro-residuos': 'Retiro de Residuos No Peligrosos', 'otro': 'Otro' };
-  const volumeLabels = { 'pequeno': 'Pequeño (menos de 3m³)', 'mediano': 'Mediano (3m³ - 7m³)', 'grande': 'Grande (más de 7m³)', 'no-seguro': 'No estoy seguro' };
+function sendWhatsApp() {
+  var name = getVal('qname').trim();
+  var email = getVal('qemail').trim();
+  var phone = getVal('qphone').trim();
+  var location = getVal('qlocation').trim();
+  var company = getVal('qcompany').trim();
+  var when = getVal('qwhen');
+  var message = getVal('qmessage').trim();
 
-  let whatsappMsg = `Hola Rizoma Space, quiero cotizar:%0A%0A`;
-  whatsappMsg += `*Nombre:* ${name}%0A`;
-  if (company) whatsappMsg += `*Empresa:* ${company}%0A`;
-  whatsappMsg += `*Email:* ${email}%0A`;
-  whatsappMsg += `*Teléfono:* ${phone}%0A`;
-  if (service) whatsappMsg += `*Servicio:* ${serviceLabels[service]}%0A`;
-  if (volume) whatsappMsg += `*Volumen:* ${volumeLabels[volume]}%0A`;
-  if (location) whatsappMsg += `*Dirección:* ${location}%0A`;
-  if (message) whatsappMsg += `*Mensaje:* ${message}%0A`;
+  var valid = true;
+  hideError('nameError'); hideError('emailError'); hideError('phoneError'); hideError('locationError');
 
-  window.open(`https://wa.me/56986618409?text=${whatsappMsg}`, '_blank');
-});
+  if (name.split(' ').length < 2) { showError('nameError'); valid = false; }
+  if (!validateEmail(email)) { showError('emailError'); valid = false; }
+  if (!phone || phone.length !== 8 || !/^\d+$/.test(phone)) { showError('phoneError'); valid = false; }
+  if (!location) { showError('locationError'); valid = false; }
+
+  if (!valid) return;
+
+  var msg = 'Hola Rizoma Space, quiero cotizar:%0A%0A';
+  msg += '\u2501\u2501 DATOS DEL CLIENTE \u2501\u2501%0A';
+  msg += '*Nombre:* ' + name + '%0A';
+  if (company) msg += '*Empresa:* ' + company + '%0A';
+  msg += '*Email:* ' + email + '%0A';
+  msg += '*Tel\u00e9fono:* +56 9 ' + phone + '%0A';
+  msg += '\u2501\u2501 DETALLE DEL SERVICIO \u2501\u2501%0A';
+  if (location) msg += '*Direcci\u00f3n:* ' + location + '%0A';
+  if (when) msg += '*Fecha solicitada:* ' + when + '%0A';
+  if (message) msg += '*Detalles:* ' + message + '%0A';
+
+  window.open('https://wa.me/56986618409?text=' + encodeURIComponent(msg.replace(/%0A/g, '\n').replace(/\*/g, '')).replace(/%250A/g, '%0A').replace(/%252A/g, '*'), '_blank');
+
+  if (toast) toast.classList.add('show');
+}
+
+if (sendBtn) sendBtn.addEventListener('click', sendWhatsApp);
+if (newQuoteBtn && toast) {
+  newQuoteBtn.addEventListener('click', function() {
+    toast.classList.remove('show');
+    ['qname','qcompany','qemail','qphone','qlocation','qwhen','qmessage'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+    ['nameError','emailError','phoneError','locationError'].forEach(hideError);
+    document.getElementById('qname').focus();
+  });
+}
+
+// Hero background fallback
+(function() {
+  var heroBg = document.querySelector('.hero__bg');
+  if (!heroBg) return;
+  var isMobile = window.innerWidth <= 768;
+  var img = new Image();
+  img.onload = function() {
+    heroBg.style.backgroundImage = isMobile ? "url('img/hero-truck-mobile.webp')" : "url('img/hero-truck.webp')";
+  };
+  img.onerror = function() {
+    heroBg.style.backgroundImage = isMobile ? "url('img/hero-truck-mobile.png')" : "url('img/hero-truck.png')";
+  };
+  img.src = 'img/hero-truck.webp';
+})();
+
+})();

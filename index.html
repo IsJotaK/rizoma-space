@@ -1,474 +1,711 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rizoma Space | Arriendo de Contenedores y Retiro de Escombros - Temuco</title>
-  <meta name="description" content="Rizoma Space: arriendo de contenedores para escombros y residuos no peligrosos en Temuco. Retiro autorizado con Resolución Sanitaria. Cotiza online.">
-  <meta name="keywords" content="arriendo contenedores Temuco, retiro escombros, residuos no peligrosos, contenedor escombros, gestión residuos, Resolución Sanitaria, arriendo contenedor, retiro ripio">
-  <meta name="robots" content="index, follow">
-  <meta name="google-site-verification" content="google1891ecbe46bdacca">
-  <link rel="canonical" href="https://rizoma-space.vercel.app/">
-  <meta name="author" content="Rizoma Space">
-  <meta name="geo.region" content="CL-AR">
-  <meta name="geo.placename" content="Temuco">
-  <meta property="og:title" content="Rizoma Space | Arriendo de Contenedores y Retiro de Escombros - Temuco">
-  <meta property="og:description" content="Arriendo de contenedores para escombros y residuos no peligrosos en Temuco. Servicio certificado con Resolución Sanitaria. Cotiza online.">
-  <meta property="og:url" content="https://rizoma-space.vercel.app/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_CL">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rizoma Space - Arriendo de Contenedores Temuco">
-  <meta name="twitter:description" content="Arriendo de contenedores con certificación sanitaria en Temuco. Retiro autorizado de escombros y residuos no peligrosos.">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Rizoma Space",
-    "description": "Arriendo de contenedores para escombros y residuos no peligrosos en Temuco. Retiro autorizado con Resolución Sanitaria.",
-    "url": "https://rizoma-space.vercel.app/",
-    "telephone": "+56986618409",
-    "email": "spacerizoma@gmail.com",
-    "areaServed": "Temuco, Región de La Araucanía, Chile",
-    "priceRange": "$$",
-    "image": "https://rizoma-space.vercel.app/img/logo.png",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Temuco",
-      "addressRegion": "La Araucanía",
-      "addressCountry": "CL"
-    },
-    "sameAs": [
-      "https://www.instagram.com/rizoma_space_temuco/"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Servicios Rizoma Space",
-      "itemListElement": [
-        { "@type": "Offer", "name": "Arriendo de Contenedores para Escombros" },
-        { "@type": "Offer", "name": "Retiro de Residuos No Peligrosos" },
-        { "@type": "Offer", "name": "Gestión de Residuos con Resolución Sanitaria" }
-      ]
-    }
-  }
-  </script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rizoma Space | Arriendo de Contenedores y Retiro de Escombros - Temuco</title>
+<meta name="description" content="Rizoma Space: arriendo de contenedores para escombros y residuos no peligrosos en Temuco. Retiro autorizado con Resolución Sanitaria. Cotiza online.">
+<meta name="keywords" content="arriendo contenedores Temuco, retiro escombros, residuos no peligrosos, contenedor escombros, gestión residuos, Resolución Sanitaria">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="google1891ecbe46bdacca">
+<link rel="canonical" href="https://rizoma-space.vercel.app/">
+<link rel="icon" type="image/png" href="img/favicon-32x32.png">
+<link rel="preload" href="img/hero-truck.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+<meta name="author" content="Rizoma Space">
+<meta name="geo.region" content="CL-AR">
+<meta name="geo.placename" content="Temuco">
+<meta property="og:title" content="Rizoma Space | Arriendo de Contenedores y Retiro de Escombros - Temuco">
+<meta property="og:description" content="Arriendo de contenedores para escombros y residuos no peligrosos en Temuco. Servicio certificado con Resolución Sanitaria. Cotiza online.">
+<meta property="og:url" content="https://rizoma-space.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rizoma Space - Arriendo de Contenedores Temuco">
+<meta name="twitter:description" content="Arriendo de contenedores con certificación sanitaria en Temuco. Retiro autorizado de escombros y residuos no peligrosos.">
+<style>*,:after,:before{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}body{font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:#1a1a2e;line-height:1.6;background:#fff;overflow-x:hidden}img{max-width:100%;height:auto;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}:root{--green-900:#0d3b1e;--green-800:#14532d;--green-700:#1a6b3c;--green-600:#228b4a;--green-500:#2ecc71;--green-400:#5de08a;--green-300:#8eedb0;--green-200:#b8f5ce;--green-100:#d9fae5;--green-50:#f0fdf4;--white:#fff;--dark:#1a1a2e;--gray-600:#4a4a5a;--gray-400:#8888a0;--gray-200:#e2e2ea;--shadow:0 4px 24px rgba(0,0,0,.08);--shadow-lg:0 16px 48px rgba(0,0,0,.12);--shadow-xl:0 24px 64px rgba(0,0,0,.16);--radius:12px;--radius-lg:20px;--transition:.4s cubic-bezier(.25,.46,.45,.94)}@keyframes pulse{0%,to{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 30px rgba(37,211,102,.7)}}.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94)}.reveal.visible{opacity:1;transform:translateY(0)}@media (min-width:1200px){.container,.container-lg{max-width:1200px}}@media (min-width:1400px){.container,.container-lg{max-width:1200px}}.container,.container-lg{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}.row{display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-6,.col-12,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-10,.col-md,.col-md-4,.col-md-6,.col-sm-6{position:relative;width:100%;padding-right:15px;padding-left:15px}.col-6{flex:0 0 50%;max-width:50%}.col-12{flex:0 0 100%;max-width:100%}@media (min-width:576px){.col-sm-6{flex:0 0 50%;max-width:50%}}@media (min-width:768px){.col-md{flex-basis:0;flex-grow:1;max-width:100%}.col-md-4{flex:0 0 33.333333%;max-width:33.333333%}.col-md-6{flex:0 0 50%;max-width:50%}}@media (min-width:992px){.col-lg-3{flex:0 0 25%;max-width:25%}.col-lg-4{flex:0 0 33.333333%;max-width:33.333333%}.col-lg-5{flex:0 0 41.666667%;max-width:41.666667%}.col-lg-6{flex:0 0 50%;max-width:50%}.col-lg-7{flex:0 0 58.333333%;max-width:58.333333%}.col-lg-10{flex:0 0 83.333333%;max-width:83.333333%}}.d-flex{display:flex}.d-none{display:none}@media (min-width:992px){.d-lg-block{display:block}.d-lg-inline-flex{display:inline-flex}}.flex-wrap{flex-wrap:wrap}.flex-column{flex-direction:column}.align-items-center{align-items:center}.justify-content-center{justify-content:center}.text-center{text-align:center}.w-100{width:100%}.h-100{height:100%}.fixed-top{position:fixed;top:0;right:0;left:0;z-index:1030}.border-0{border:0!important}.g-0{margin-right:-15px;margin-left:-15px}.g-0>[class*=col-]{padding-right:15px;padding-left:15px}.g-3{margin-right:-15px;margin-left:-15px}.g-3>[class*=col-]{padding-right:7.5px;padding-left:7.5px}.g-4{margin-right:-15px;margin-left:-15px}.g-4>[class*=col-]{padding-right:15px;padding-left:15px}.g-5{margin-right:-15px;margin-left:-15px}.g-5>[class*=col-]{padding-right:24px;padding-left:24px}@media (min-width:992px){.align-items-lg-center{align-items:center}.text-lg-start{text-align:left}.justify-content-lg-start{justify-content:flex-start}}.ms-auto{margin-left:auto}.mt-2{margin-top:8px}.mt-4{margin-top:24px}.mb-4{margin-bottom:24px}.mb-5{margin-bottom:48px}.pb-2{padding-bottom:8px}.gap-1{gap:4px}.gap-2{gap:8px}.gap-3{gap:16px}.text-muted{color:#8888a0}.navbar{background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200);transition:box-shadow .3s,border-color .3s;padding-top:0;padding-bottom:0;min-height:56px}.navbar>.container,.navbar>.container-lg{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between}.navbar-brand{display:flex;align-items:center;gap:8px}.navbar-brand .brand-logo{height:44px;width:auto}.header__logo-text{font-size:18px;font-weight:800;color:var(--green-800)}.header__logo-text span{color:var(--green-500)}.navbar-toggler{background:0 0;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;justify-content:center;color:var(--gray-600)}.navbar-toggler svg{width:24px;height:24px}.navbar-collapse{display:none;width:100%}@media (min-width:992px){.navbar-collapse{display:flex!important;width:auto;flex:1}.navbar-toggler{display:none}}.navbar-collapse.open{display:block}.navbar-nav{display:flex;flex-direction:column;padding-left:0;margin-bottom:0;list-style:none}@media (min-width:992px){.navbar-nav{flex-direction:row;margin-left:auto;gap:4px;align-items:center}}.nav-link{display:block;font-size:14px;font-weight:500;color:var(--gray-600);padding:8px 0;transition:color .3s;position:relative}@media (min-width:992px){.nav-link{padding:4px 10px}}.nav-link::after{content:'';position:absolute;bottom:4px;left:12px;right:12px;height:2px;background:var(--green-500);transform:scaleX(0);transition:transform .3s}.nav-link:hover{color:var(--green-600)}.nav-link:hover::after{transform:scaleX(1)}.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;font-size:15px;font-weight:600;border-radius:50px;transition:all var(--transition);cursor:pointer;border:2px solid transparent;position:relative;overflow:hidden;line-height:1.2;text-align:center;justify-content:center;white-space:nowrap}.btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.1);transform:translateX(-100%);transition:transform .6s cubic-bezier(.25,.46,.45,.94);pointer-events:none}.btn:hover::after{transform:translateX(0)}.btn--primary{background:var(--green-600);color:var(--white)}.btn--primary:hover{background:var(--green-700);color:var(--white);transform:translateY(-2px)}.btn--outline{background:0 0;color:var(--white);border-color:var(--white)}.btn--outline:hover{background:var(--white);color:var(--green-700)}.btn--whatsapp-header{background:#25d366;color:var(--white);padding:6px 16px;font-size:13px}.btn--whatsapp-header:hover{background:#1da851;color:var(--white)}.btn--whatsapp{background:#25d366;color:var(--white);border-color:transparent}.btn--whatsapp:hover{background:#1da851;color:var(--white);transform:translateY(-2px)}.btn--email{background:var(--green-600);color:var(--white)}.btn--email:hover{background:var(--green-700);color:var(--white);transform:translateY(-2px)}.btn--instagram{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:var(--white)}.btn--instagram:hover{opacity:.9;transform:translateY(-2px)}.btn--facebook{background:#1877f2;color:var(--white)}.btn--facebook:hover{background:#166fe5;transform:translateY(-2px)}.btn--large{padding:16px 40px;font-size:17px}.btn-sm{padding:10px 24px;font-size:14px}.hero{min-height:85vh;display:flex;align-items:center;position:relative;background:linear-gradient(135deg,var(--green-900) 0%,var(--green-700) 50%,var(--green-600) 100%);overflow:hidden}.hero__bg{position:absolute;inset:0;background-image:url(img/hero-truck.webp);background-size:cover;background-position:center 30%;background-repeat:no-repeat;transform:scale(1.05);will-change:transform}.hero__overlay{position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(46,204,113,.25) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(255,255,255,.08) 0%,transparent 50%);pointer-events:none}.hero__pattern{position:absolute;inset:0;background-image:radial-gradient(circle at 25% 25%,rgba(255,255,255,.03) 1px,transparent 1px),radial-gradient(circle at 75% 75%,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}.hero__badge{display:inline-block;background:rgba(255,255,255,.15);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--green-200);padding:8px 20px;border-radius:50px;font-size:14px;font-weight:500;margin-bottom:16px;border:1px solid rgba(255,255,255,.1)}.hero__cert-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--green-200);padding:10px 22px;border-radius:50px;font-size:14px;margin-bottom:24px;border:1px solid rgba(46,204,113,.3)}.hero__cert-badge strong{color:var(--white)}.hero__row{position:relative;z-index:1;padding-top:80px;padding-bottom:40px}.hero__title{font-size:52px;font-weight:800;line-height:1.15;color:var(--white);margin-bottom:20px}.hero__title span{background:linear-gradient(135deg,var(--green-300),var(--green-500));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.hero__subtitle{font-size:18px;color:rgba(255,255,255,.8);max-width:500px;margin-bottom:32px;line-height:1.7}.hero__stats-card{background:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-radius:var(--radius-lg);padding:32px;display:flex;flex-direction:column;gap:20px;border:1px solid rgba(255,255,255,.15)}.hero__stat{display:flex;flex-direction:column;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1)}.hero__stat:last-child{border-bottom:none}.hero__stat-number{font-size:32px;font-weight:800;color:var(--white)}.hero__stat-label{font-size:14px;color:rgba(255,255,255,.6)}.services{padding:100px 0;background:radial-gradient(ellipse at 0% 40%,rgba(46,204,113,.06) 0%,transparent 50%),radial-gradient(ellipse at 100% 60%,rgba(13,59,30,.04) 0%,transparent 50%),var(--white)}.service-card{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:44px 36px;transition:all var(--transition);text-align:center;position:relative;overflow:hidden;transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--green-500),var(--green-600));transform:scaleX(0);transform-origin:left;transition:transform var(--transition)}.service-card:hover::before{transform:scaleX(1)}.service-card:hover{transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent}.service-card__icon{width:72px;height:72px;border-radius:50%;background:var(--green-50);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:30px;color:var(--green-600);transition:all .3s}.service-card:hover .service-card__icon{background:var(--green-600);color:var(--white)}.service-card__title{font-size:20px;font-weight:700;color:var(--dark);margin-bottom:12px}.service-card__desc{font-size:15px;color:var(--gray-400);line-height:1.7}.trusted-bar{width:100%}.trusted-bar .col-md{position:relative}.trusted-bar .col-md:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);width:1px;height:32px;background:var(--gray-200)}@media (max-width:767px){.trusted-bar .col-md:not(:last-child)::after{display:none}}.trusted__number{display:block;font-size:28px;font-weight:800;color:var(--green-600);line-height:1;margin-bottom:2px}.trusted__label{font-size:13px;color:var(--gray-400);font-weight:500}.section__header{max-width:600px;margin:0 auto 56px}.section__title{font-size:38px;font-weight:800;color:var(--dark);margin-bottom:16px}.section__title span{color:var(--green-600)}.section__desc{font-size:17px;color:var(--gray-400);line-height:1.7}.how-it-works{padding:100px 0;background:radial-gradient(ellipse at 100% 20%,rgba(46,204,113,.08) 0%,transparent 50%),radial-gradient(ellipse at 0% 80%,rgba(13,59,30,.05) 0%,transparent 50%),var(--green-50)}.steps{max-width:700px;display:flex;flex-direction:column;position:relative;margin:0 auto}.steps::before{content:'';position:absolute;left:28px;top:60px;bottom:60px;width:2px;background:linear-gradient(to bottom,var(--green-300),var(--green-500))}.step{display:flex;gap:24px;align-items:flex-start;background:var(--white);padding:32px;border-radius:var(--radius);box-shadow:0 1px 3px rgba(0,0,0,.06);transition:all var(--transition);position:relative;margin-bottom:32px;border:1px solid var(--gray-200)}.step:last-child{margin-bottom:0}.step:hover{transform:translateX(8px);box-shadow:var(--shadow-lg);border-color:var(--green-200)}.step__number{flex-shrink:0;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--green-600),var(--green-500));color:var(--white);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;position:relative;z-index:1;box-shadow:0 4px 12px rgba(34,139,74,.3)}.step__content h3{font-size:20px;font-weight:700;color:var(--dark);margin-bottom:8px}.step__content p{font-size:15px;color:var(--gray-400);line-height:1.7}.gallery{padding:100px 0;background:radial-gradient(ellipse at 20% 50%,rgba(46,204,113,.06) 0%,transparent 50%),radial-gradient(ellipse at 80% 50%,rgba(13,59,30,.04) 0%,transparent 50%),var(--green-50)}.gallery__item{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;cursor:pointer;transition:all var(--transition);position:relative;transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));display:block}.gallery__item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.3),transparent 50%);opacity:0;transition:opacity var(--transition)}.gallery__item:hover{transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(1.03);box-shadow:var(--shadow-xl)}.gallery__item:hover::after{opacity:1}.gallery__item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}.gallery__item:hover img{transform:scale(1.1)}.quote{padding:100px 0;background:radial-gradient(ellipse at 20% 30%,rgba(46,204,113,.08) 0%,transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(13,59,30,.05) 0%,transparent 50%),var(--green-50)}.quote__form{background:var(--white);border-radius:var(--radius-lg);padding:48px 40px;box-shadow:var(--shadow)}.form-label{display:block;font-size:14px;font-weight:600;color:var(--dark);margin-bottom:6px}.form-control{display:block;width:100%;padding:14px 18px;border:2px solid var(--gray-200);border-radius:12px;font-family:inherit;font-size:15px;color:var(--dark);transition:border-color .3s,box-shadow .3s;background:#fff;line-height:1.5}.form-control:focus{border-color:var(--green-500);box-shadow:0 0 0 4px var(--green-100);outline:none}.form-control:user-invalid{border-color:#ef4444}.form-control:user-invalid:focus{box-shadow:0 0 0 4px #fef2f2}textarea.form-control{resize:vertical}.input-group{display:flex;align-items:stretch;width:100%}.input-group .form-control{position:relative;flex:1;min-width:0}.input-group-text{display:flex;align-items:center;padding:14px 18px;font-size:15px;font-weight:500;color:var(--gray-600);background:var(--green-50);border:2px solid var(--gray-200);border-right:none;border-radius:12px 0 0 12px;white-space:nowrap}.input-group .form-control{border-radius:0 12px 12px 0}.date-picker-wrapper{position:relative}.date-picker-wrapper .date-picker-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--gray-400);pointer-events:none;z-index:1;width:18px;height:18px}.date-picker-wrapper .date-picker-input{padding-left:48px}.date-picker-input{width:100%}.form-error{font-size:12px;color:#ef4444;min-height:18px;margin-top:4px;opacity:0;transform:translateY(-4px);transition:opacity .3s,transform .3s}.form-error.show{opacity:1;transform:translateY(0)}.coverage{padding:100px 0;background:radial-gradient(ellipse at 30% 20%,rgba(46,204,113,.05) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(13,59,30,.03) 0%,transparent 50%),var(--white)}.coverage__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}.coverage__zone{background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:24px;transition:all var(--transition)}.coverage__zone:hover{box-shadow:var(--shadow-lg);border-color:var(--green-200)}.coverage__zone-title{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:12px;display:flex;align-items:center;gap:8px}.coverage__zone-title svg{color:var(--green-600);width:18px;height:18px;flex-shrink:0}.coverage__sectors{list-style:none;padding:0}.coverage__sectors li{font-size:14px;color:var(--gray-600);padding:4px 0;padding-left:24px;position:relative}.coverage__sectors li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--green-300)}.coverage__zone--cta{text-align:center;background:var(--green-50);border-color:var(--green-200);display:flex;flex-direction:column;align-items:center;gap:8px}.coverage__zone--cta svg{color:var(--green-600);width:32px;height:32px}.coverage__zone--cta h3{font-size:18px;font-weight:700;color:var(--dark)}.coverage__zone--cta p{font-size:14px;color:var(--gray-600);margin-bottom:8px}.certification{padding:100px 0;background:radial-gradient(ellipse at 80% 30%,rgba(46,204,113,.06) 0%,transparent 50%),radial-gradient(ellipse at 20% 70%,rgba(13,59,30,.04) 0%,transparent 50%),var(--white)}.certification__card{text-align:center;background:var(--green-50);border:1px solid var(--green-200);border-radius:var(--radius-lg);padding:56px 40px}.certification__icon{width:80px;height:80px;border-radius:50%;background:var(--green-600);display:flex;align-items:center;justify-content:center;margin:0 auto 24px}.certification__icon svg{width:36px;height:36px;color:var(--white)}.certification__card h3{font-size:24px;font-weight:700;color:var(--dark);margin-bottom:16px}.certification__card>p{font-size:16px;color:var(--gray-600);line-height:1.7;max-width:560px;margin:0 auto 32px}.certification__badges{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:32px}.cert-badge{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--green-800)}.cert-badge svg{color:var(--green-600);width:18px;height:18px;flex-shrink:0}.certification__extra{border-top:1px solid var(--green-200);padding-top:24px;margin-bottom:32px}.certification__extra h4{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:12px;display:flex;align-items:center;gap:8px;justify-content:center}.certification__extra h4 svg{color:var(--green-600);width:20px;height:20px}.certification__extra p{font-size:15px;color:var(--gray-600);line-height:1.7;max-width:620px;margin:0 auto}.contact{padding:100px 0;background:radial-gradient(ellipse at 50% 0%,rgba(46,204,113,.06) 0%,transparent 50%),radial-gradient(ellipse at 100% 100%,rgba(13,59,30,.04) 0%,transparent 50%),var(--white)}.contact__card{text-align:center;padding:40px 24px;border-radius:var(--radius-lg);border:1px solid var(--gray-200);transition:all .3s;transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}.contact__card:hover{box-shadow:var(--shadow-lg);border-color:var(--green-200);transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px)}.contact__card-icon{width:64px;height:64px;border-radius:50%;background:var(--green-50);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}.contact__card-icon svg{width:26px;height:26px;color:var(--green-600)}.contact__card h3{font-size:20px;font-weight:700;color:var(--dark);margin-bottom:8px}.contact__card p{font-size:14px;color:var(--gray-400);margin-bottom:16px}.contact__card .btn{width:100%}.footer{background:var(--green-900);color:rgba(255,255,255,.8);padding-top:64px}.footer__logo-img{height:64px;width:auto;margin-bottom:16px}.footer__text{font-size:14px;line-height:1.7;max-width:300px}.footer__links h4,.footer__contact h4{color:var(--white);font-size:16px;font-weight:700;margin-bottom:16px}.footer__links ul li{margin-bottom:10px}.footer__links a{font-size:14px;transition:color .3s}.footer__links a:hover{color:var(--green-300)}.footer__contact a{display:block;font-size:14px;margin-bottom:10px;transition:color .3s}.footer__contact a:hover{color:var(--green-300)}.footer__contact svg{margin-right:8px;width:16px;height:16px;vertical-align:middle}.footer__bottom{border-top:1px solid rgba(255,255,255,.1);padding:24px 0;text-align:center;font-size:13px;opacity:.6;margin-top:48px}.whatsapp-float{position:fixed;bottom:24px;right:24px;width:60px;height:60px;background:#25d366;color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:999;transition:all .3s;animation:pulse 2s infinite;box-shadow:0 4px 20px rgba(37,211,102,.4)}.whatsapp-float:hover{transform:scale(1.1);color:var(--white)}.whatsapp-float svg{width:30px;height:30px}.thankyou-toast{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;z-index:9999;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}.thankyou-toast.show{display:flex}.thankyou-toast__content{background:var(--white);border-radius:var(--radius-lg);padding:48px 40px;text-align:center;max-width:420px;width:90%;box-shadow:var(--shadow-xl)}.thankyou-toast__icon svg{width:48px;height:48px;color:var(--green-500);margin-bottom:16px}.thankyou-toast__title{font-size:24px;font-weight:700;color:var(--dark);margin-bottom:8px}.thankyou-toast__text{font-size:15px;color:var(--gray-400);margin-bottom:24px;line-height:1.6}.materials-info__card{border:1px solid var(--gray-200);border-radius:var(--radius-lg);padding:36px;background:var(--white)}.materials-info__title{font-size:22px;font-weight:700;color:var(--dark);margin-bottom:24px;display:flex;align-items:center;gap:10px}.materials-info__title svg{color:var(--green-600);width:22px;height:22px}.materials-info__subtitle{font-size:16px;font-weight:600;color:var(--dark);margin-bottom:12px;display:flex;align-items:center;gap:8px}.materials-info__subtitle svg{width:18px;height:18px}.materials-info__list{list-style:none;padding:0}.materials-info__list li{font-size:14px;color:var(--gray-600);padding:6px 0;padding-left:24px;position:relative}.materials-info__list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:8px;height:8px;border-radius:50%}.materials-info__list li:nth-child(-n+7)::before{background:var(--green-500)}.materials-info__list--no li::before{background:#ef4444!important}.materials-info__footnote{font-size:13px;color:var(--gray-400);margin-top:24px;font-style:italic;text-align:center}.icon{display:inline-block;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.icon-fill{fill:currentColor;stroke:none}.icon-sm{width:18px;height:18px}.icon-md{width:24px;height:24px}.icon-lg{width:30px;height:30px}.icon-xl{width:36px;height:36px}.service-card__icon .icon{width:30px;height:30px;color:inherit}.contact__card-icon .icon{width:26px;height:26px;color:var(--green-600)}.whatsapp-float .icon{width:30px;height:30px}.navbar-toggler .icon{width:24px;height:24px}.hero__cert-badge .icon{color:var(--green-400);width:18px;height:18px}.certification__icon .icon{width:36px;height:36px;color:var(--white)}.cert-badge .icon{color:var(--green-600);width:18px;height:18px}.certification__extra h4 .icon{color:var(--green-600);width:20px;height:20px}.materials-info__title .icon{color:var(--green-600);width:22px;height:22px}.materials-info__subtitle .icon-check{color:var(--green-500);width:18px;height:18px}.materials-info__subtitle .icon-times{color:#ef4444;width:18px;height:18px}.coverage__zone-title .icon{color:var(--green-600);width:18px;height:18px}.coverage__zone--cta .icon{color:var(--green-600);width:32px;height:32px}.thankyou-toast__icon .icon{color:var(--green-500);width:48px;height:48px}.date-picker-wrapper .icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);color:var(--gray-400);pointer-events:none;z-index:1;width:18px;height:18px}.footer__contact .icon{margin-right:8px;width:16px;height:16px;vertical-align:middle}@media (max-width:991px){.hero{min-height:auto;padding:150px 0 80px}.hero__title{font-size:40px}}@media (max-width:768px){.hero{padding:150px 0 60px;min-height:auto}.hero__bg{background-image:url(img/hero-truck-mobile.webp);background-position:center center;background-size:cover}.hero__title{font-size:32px}.hero__subtitle{font-size:16px}.services,.how-it-works,.gallery,.certification,.quote,.contact{padding:60px 0}.section__title{font-size:28px}.section__desc{font-size:15px}.service-card{padding:32px 24px}.step{flex-direction:column;align-items:center;text-align:center}.coverage__grid{grid-template-columns:1fr}.navbar-brand .brand-logo{height:32px}.whatsapp-float{width:52px;height:52px;bottom:16px;right:16px}.whatsapp-float .icon{width:26px;height:26px}}@media (max-width:576px){.g-3>[class*=col-]{padding-right:7.5px;padding-left:7.5px}}@media (max-width:480px){.hero__title{font-size:26px}.section__title{font-size:24px}}</style>
 </head>
 <body>
 
-  <div id="app">
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <path id="i-whatsapp" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    <path id="i-instagram" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+    <circle id="i-instagram-c" cx="12" cy="12" r="5"/>
+    <circle id="i-instagram-d" cx="17" cy="7.5" r="1.5"/>
+    <path id="i-facebook" d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    <path id="i-envelope" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <path id="i-envelope-l" d="M22 6l-10 8L2 6"/>
+    <path id="i-shield" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    <path id="i-check" d="M20 6L9 17l-5-5"/>
+    <path id="i-circle" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+    <path id="i-circle-check" d="M9 12l2 2 4-4"/>
+    <path id="i-times" d="M18 6L6 18M6 6l12 12"/>
+    <path id="i-calculator" d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/>
+    <path id="i-calc-l1" d="M8 6h8M8 10h8M8 14h6"/>
+    <path id="i-truck" d="M1 16h3m16 0h3M5 16a2 2 0 1 0 4 0 2 2 0 0 0-4 0zm10 0a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
+    <path id="i-truck-b" d="M5 16V4h10l6 6v6"/>
+    <path id="i-truck-c" d="M15 10h6"/>
+    <path id="i-recycle" d="M12 2v4m6 3l3 1-1-3m1 3l-3-1M8 14l-3-1 1 3m-1-3l3 1"/>
+    <path id="i-recycle-b" d="M12 18v4m-6-3l-3-1 1 3m-1-3l3 1m10-4l3 1-1-3m1 3l-3-1"/>
+    <path id="i-clipboard" d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <path id="i-clipboard-r" d="M8 2h8v4H8z"/>
+    <path id="i-clipboard-c" d="M9 13l2 2 4-4"/>
+    <path id="i-building" d="M3 7h18v14H3zM7 7V3h10v4"/>
+    <path id="i-building-w" d="M7 11v4m4-4v4m4-4v4"/>
+    <path id="i-city" d="M4 22V2h10v20"/>
+    <path id="i-city-b" d="M14 8h6v14"/>
+    <path id="i-city-w" d="M7 6v4m4-4v4m-4 6v4m4-4v4m8-10v4"/>
+    <path id="i-water" d="M12 2s-6 8-6 12a6 6 0 1 0 12 0c0-4-6-12-6-12z"/>
+    <path id="i-tree" d="M12 2L7 10h10zM8 10l-3 6h14l-3-6M10 16v6m4-6v6"/>
+    <path id="i-mountain" d="M2 20l6-12 5 8 3-4 6 8"/>
+    <path id="i-map-pin" d="M12 21s-8-6-8-11a8 8 0 1 1 16 0c0 5-8 11-8 11z"/>
+    <circle id="i-map-pin-d" cx="12" cy="10" r="3"/>
+    <path id="i-file-text" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+    <path id="i-file-text-l" d="M14 2v6h6M10 13h4m-4 4h4"/>
+    <path id="i-calendar" d="M3 4h18v18H3zM3 10h18M8 2v4m8-4v4"/>
+    <path id="i-redo" d="M1 12a11 11 0 1 0 5-9"/>
+    <path id="i-redo-a" d="M1 1v6h6"/>
+    <path id="i-hamburger" d="M4 6h16M4 12h16M4 18h16"/>
+  </defs>
+</svg>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top" id="header">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <img src="img/logo.png" alt="Rizoma Space" height="36" onerror="this.style.display='none'">
-        <span class="header__logo-text">Rizoma <span>Space</span></span>
-      </a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Menú">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
-          <li class="nav-item"><a class="nav-link" href="#como-funciona">Cómo Funciona</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certificacion">Certificación</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-          <li class="nav-item ms-lg-2"><a class="nav-link nav-link--cta btn btn--primary btn-sm px-3 py-1" href="#cotizacion">Cotizar</a></li>
+<nav class="navbar fixed-top" id="header">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="Rizoma Space" class="brand-logo" width="44" height="44"></picture>
+      <span class="header__logo-text">Rizoma <span>Space</span></span>
+    </a>
+    <button class="navbar-toggler" id="navToggle" aria-label="Menú">
+      <svg class="icon" viewBox="0 0 24 24"><use href="#i-hamburger"/></svg>
+    </button>
+    <div class="navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li><a class="nav-link" href="#inicio">Inicio</a></li>
+        <li><a class="nav-link" href="#servicios">Servicios</a></li>
+        <li><a class="nav-link" href="#galeria">Galería</a></li>
+        <li><a class="nav-link" href="#como-funciona">Cómo Funciona</a></li>
+        <li><a class="nav-link" href="#cotizacion">Cotizar</a></li>
+        <li><a class="nav-link" href="#certificacion">Certificación</a></li>
+        <li><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <a href="https://wa.me/56986618409" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp-header d-none d-lg-inline-flex">
+      <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg> WhatsApp
+    </a>
+  </div>
+</nav>
+
+<section class="hero" id="inicio">
+  <div class="hero__bg"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__pattern"></div>
+  <div class="container">
+    <div class="row align-items-center g-5 hero__row">
+      <div class="col-lg-7 text-center text-lg-start">
+        <div class="hero__badge">Retiro de Escombros en Temuco</div>
+        <div class="hero__cert-badge">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="#i-shield"/><use href="#i-check"/></svg>
+          <span>Certificados con <strong>Resolución Sanitaria</strong> para residuos no peligrosos</span>
+        </div>
+        <h1 class="hero__title">Retiro de Escombros en <span>Temuco</span><br>Sin Complicaciones</h1>
+        <p class="hero__subtitle">¿Necesitas retiro de escombros en Temuco? Te dejamos el contenedor, lo llenas a tu ritmo y nosotros lo retiramos con certificación sanitaria. Gestión profesional de residuos no peligrosos para tu empresa o proyecto.</p>
+        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+          <a href="#cotizacion" class="btn btn--primary">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="#i-calculator"/><use href="#i-calc-l1"/></svg> Calcular Cotización
+          </a>
+          <a href="#servicios" class="btn btn--outline">Nuestros Servicios</a>
+        </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-block">
+        <div class="hero__stats-card">
+          <div class="hero__stat">
+            <span class="hero__stat-number"><span class="counter" data-target="50">0</span>+</span>
+            <span class="hero__stat-label">Proyectos</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">24/7</span>
+            <span class="hero__stat-label">Atención</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-number"><span class="counter" data-target="1">0</span>+</span>
+            <span class="hero__stat-label">Año de Experiencia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="section__header text-center">
+      <h2 class="section__title">Nuestros <span>Servicios</span></h2>
+      <p class="section__desc">Ofrecemos soluciones simples para la gestión de residuos no peligrosos en Temuco y sus alrededores. Servicio para constructoras, particulares, empresas y proyectos de toda escala.</p>
+    </div>
+    <div class="trusted-bar row text-center justify-content-center g-0 mb-5 pb-2">
+      <div class="col-6 col-md">
+        <span class="trusted__number">+<span class="counter" data-target="50">0</span></span>
+        <span class="trusted__label">Proyectos Completados</span>
+      </div>
+      <div class="col-6 col-md">
+        <span class="trusted__number"><span class="counter" data-target="100">0</span>%</span>
+        <span class="trusted__label">Cobertura Temuco</span>
+      </div>
+      <div class="col-6 col-md">
+        <span class="trusted__number">24/7</span>
+        <span class="trusted__label">Atención al Cliente</span>
+      </div>
+      <div class="col-6 col-md">
+        <span class="trusted__number"><span class="counter" data-target="1">0</span></span>
+        <span class="trusted__label">Año de Experiencia</span>
+      </div>
+      <div class="col-6 col-md">
+        <span class="trusted__number">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="#i-shield"/></svg>
+        </span>
+        <span class="trusted__label">Resolución Sanitaria</span>
+      </div>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-6">
+        <div class="service-card h-100 tilt reveal">
+          <div class="service-card__icon">
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-truck"/><use href="#i-truck-b"/><use href="#i-truck-c"/></svg>
+          </div>
+          <h3 class="service-card__title">Arriendo de Contenedores</h3>
+          <p class="service-card__desc">Contenedores de distintas capacidades para tu retiro de escombros en Temuco. Los dejamos en tu ubicación y los retiramos cuando tú decidas.</p>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="service-card h-100 tilt reveal">
+          <div class="service-card__icon">
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-recycle"/><use href="#i-recycle-b"/></svg>
+          </div>
+          <h3 class="service-card__title">Retiro de Escombros y Residuos</h3>
+          <p class="service-card__desc">Servicio profesional de retiro de escombros en Temuco. Nos encargamos del retiro y disposición final de tierra, hormigón, maderas y residuos no peligrosos con Resolución Sanitaria.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4 mt-4 justify-content-center">
+      <div class="col-lg-10">
+        <div class="materials-info__card">
+          <h3 class="materials-info__title">
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-clipboard"/><use href="#i-clipboard-r"/><use href="#i-clipboard-c"/></svg>
+            Residuos que retiramos
+          </h3>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <h4 class="materials-info__subtitle">
+                <svg class="icon icon-sm icon-check" viewBox="0 0 24 24"><use href="#i-circle"/><use href="#i-circle-check"/></svg>
+                Aceptamos
+              </h4>
+              <ul class="materials-info__list">
+                <li>Escombros de construcción</li>
+                <li>Tierra y excavaciones</li>
+                <li>Hormigón y cemento</li>
+                <li>Maderas y restos de poda</li>
+                <li>Residuos de demolición</li>
+                <li>Restos de obra menor</li>
+                <li>Escombros limpios en general</li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <h4 class="materials-info__subtitle">
+                <svg class="icon icon-sm icon-times" viewBox="0 0 24 24"><use href="#i-circle"/><use href="#i-times"/></svg>
+                No aceptamos
+              </h4>
+              <ul class="materials-info__list materials-info__list--no">
+                <li>Basura domiciliaria o residencial</li>
+                <li>Residuos orgánicos o comida</li>
+                <li>Residuos peligrosos o tóxicos</li>
+                <li>Amianto o materiales con fibra</li>
+                <li>Residuos líquidos o químicos</li>
+                <li>Neumáticos fuera de uso</li>
+              </ul>
+            </div>
+          </div>
+          <p class="materials-info__footnote">Si tienes dudas sobre algún residuo en particular, consúltanos por WhatsApp y te confirmamos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works" id="como-funciona">
+  <div class="container">
+    <div class="section__header text-center">
+      <h2 class="section__title">¿Cómo <span>Funciona?</span></h2>
+      <p class="section__desc">Tres pasos simples para tu retiro de escombros en Temuco.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <h3>Nos Contactas</h3>
+          <p>Escríbenos por WhatsApp o llámanos. Cuéntanos qué necesitas y te daremos el contenedor adecuado.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step__number">2</div>
+        <div class="step__content">
+          <h3>Instalamos el Contenedor</h3>
+          <p>Llevamos el contenedor a tu domicilio, obra o terreno. Lo llenas en los días que acordemos.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step__number">3</div>
+        <div class="step__content">
+          <h3>Lo Retiramos</h3>
+          <p>Pasamos a buscar el contenedor y nos encargamos de la disposición final responsable de los residuos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="container">
+    <div class="section__header text-center">
+      <h2 class="section__title">Galería de <span>Trabajos</span></h2>
+      <p class="section__desc">Conoce algunos de los proyectos donde hemos entregado nuestros servicios de arriendo de contenedores y retiro de escombros en Temuco.</p>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-4 col-sm-6"><a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__item tilt reveal"><picture><source srcset="img/gallery-1.webp" type="image/webp"><img src="img/gallery-1.jpg" alt="Contenedor Rizoma Space en obra" loading="lazy" width="400" height="300"></picture></a></div>
+      <div class="col-md-4 col-sm-6"><a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__item tilt reveal"><picture><source srcset="img/gallery-2.webp" type="image/webp"><img src="img/gallery-2.jpg" alt="Retiro de escombros Rizoma Space" loading="lazy" width="400" height="300"></picture></a></div>
+      <div class="col-md-4 col-sm-6"><a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__item tilt reveal"><picture><source srcset="img/gallery-3.webp" type="image/webp"><img src="img/gallery-3.jpg" alt="Contenedor para residuos no peligrosos" loading="lazy" width="400" height="300"></picture></a></div>
+      <div class="col-md-4 col-sm-6"><a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__item tilt reveal"><picture><source srcset="img/gallery-4.webp" type="image/webp"><img src="img/gallery-4.jpg" alt="Servicio de contenedor Rizoma Space" loading="lazy" width="400" height="300"></picture></a></div>
+      <div class="col-md-4 col-sm-6"><a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__item tilt reveal"><picture><source srcset="img/gallery-5.webp" type="image/webp"><img src="img/gallery-5.jpg" alt="Camión contenedor Rizoma Space" loading="lazy" width="400" height="300"></picture></a></div>
+      <div class="col-md-4 col-sm-6"><a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__item tilt reveal"><picture><source srcset="img/gallery-6.webp" type="image/webp"><img src="img/gallery-6.jpg" alt="Proyecto Rizoma Space Temuco" loading="lazy" width="400" height="300"></picture></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote" id="cotizacion">
+  <div class="container">
+    <div class="section__header text-center">
+      <h2 class="section__title">Solicita tu <span>Cotización</span></h2>
+      <p class="section__desc">Déjanos tus datos y te enviaremos una cotización personalizada por WhatsApp.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="quote__form reveal">
+          <p class="text-center text-muted mb-4">Completa tus datos y te contactaremos a la brevedad</p>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label" for="qname">Nombre completo *</label>
+              <input type="text" class="form-control" id="qname" required placeholder="Nombre y Apellido">
+              <div class="form-error" id="nameError">Ingresa tu nombre y apellido</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="qcompany">Empresa</label>
+              <input type="text" class="form-control" id="qcompany" placeholder="Nombre de tu empresa">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="qemail">Email *</label>
+              <input type="email" class="form-control" id="qemail" required placeholder="correo@ejemplo.cl">
+              <div class="form-error" id="emailError">El correo ingresado no es válido</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="qphone">Teléfono *</label>
+              <div class="input-group">
+                <span class="input-group-text">+56 9</span>
+                <input type="tel" class="form-control" id="qphone" required maxlength="8" placeholder="1234 5678" inputmode="numeric">
+              </div>
+              <div class="form-error" id="phoneError">Debe ingresar 8 dígitos después del +56 9</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="qlocation">Dirección del servicio *</label>
+              <input type="text" class="form-control" id="qlocation" placeholder="Ej: Av. Alemania 850, Temuco">
+              <div class="form-error" id="locationError">Ingresa una dirección válida</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="qwhen">¿Qué día necesitas el servicio?</label>
+              <div class="date-picker-wrapper">
+                <svg class="icon" viewBox="0 0 24 24"><use href="#i-calendar"/></svg>
+                <input type="date" class="form-control date-picker-input" id="qwhen">
+              </div>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="qmessage">Detalles adicionales</label>
+              <textarea class="form-control" id="qmessage" rows="3" placeholder="Ej: volumen estimado, tipo de residuo, dirección exacta..."></textarea>
+            </div>
+          </div>
+          <button type="button" class="btn btn--primary btn--large w-100 mt-4" id="sendQuoteBtn">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg> Enviar solicitud por WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="coverage" id="cobertura">
+  <div class="container">
+    <div class="section__header text-center">
+      <h2 class="section__title">Cobertura en <span>La Araucanía</span></h2>
+      <p class="section__desc">Cubrimos toda la Región de La Araucanía. Estamos donde nos necesites.</p>
+    </div>
+    <div class="coverage__grid">
+      <div class="coverage__zone reveal">
+        <h3 class="coverage__zone-title"><svg class="icon" viewBox="0 0 24 24"><use href="#i-building"/><use href="#i-building-w"/></svg> Temuco</h3>
+        <ul class="coverage__sectors">
+          <li>Centro</li><li>Pueblo Nuevo</li><li>Amanecer</li><li>Santa Rosa</li><li>Las Quilas</li><li>Labranza</li><li>Parque Costanera</li>
         </ul>
       </div>
-      <a href="https://wa.me/56986618409" target="_blank" class="btn btn--whatsapp-header d-none d-lg-inline-flex ms-3">
-        <i class="fab fa-whatsapp me-1"></i> +56 9 8661 8409
-      </a>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero" id="inicio">
-    <div class="hero__overlay"></div>
-    <div class="hero__pattern"></div>
-    <div class="container">
-      <div class="row align-items-center g-5 hero__row">
-        <div class="col-lg-6 text-center text-lg-start">
-          <span class="hero__badge">Retiro de Escombros en Temuco</span>
-          <div class="hero__cert-badge">
-            <i class="fas fa-certificate"></i>
-            <span>Certificados con <strong>Resolución Sanitaria</strong> para residuos no peligrosos</span>
-          </div>
-          <h1 class="hero__title">
-            Retiro de Escombros en <span>Temuco</span><br>
-            Sin Complicaciones
-          </h1>
-          <p class="hero__subtitle">
-            ¿Necesitas retiro de escombros en Temuco? Te dejamos el contenedor, lo llenas a tu ritmo y nosotros lo retiramos con certificación sanitaria. 
-            Gestión profesional de residuos no peligrosos para tu empresa o proyecto.
-          </p>
-          <div class="hero__actions d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-            <a href="#cotizacion" class="btn btn--primary">
-              <i class="fas fa-file-invoice"></i> Cotiza Ahora
-            </a>
-            <a href="#servicios" class="btn btn--outline">Ver Servicios</a>
-          </div>
-        </div>
-        <div class="col-lg-6 text-center">
-          <div class="hero__image-box mx-auto">
-            <img src="img/gallery-1.jpg" alt="Contenedor Rizoma Space" class="hero__image">
-          </div>
-        </div>
+      <div class="coverage__zone reveal">
+        <h3 class="coverage__zone-title"><svg class="icon" viewBox="0 0 24 24"><use href="#i-city"/><use href="#i-city-b"/><use href="#i-city-w"/></svg> Cautín Norte</h3>
+        <ul class="coverage__sectors">
+          <li>Padre Las Casas</li><li>Lautaro</li><li>Vilcún</li><li>Freire</li><li>Nueva Imperial</li><li>Cholchol</li>
+        </ul>
+      </div>
+      <div class="coverage__zone reveal">
+        <h3 class="coverage__zone-title"><svg class="icon" viewBox="0 0 24 24"><use href="#i-water"/></svg> Cautín Sur</h3>
+        <ul class="coverage__sectors">
+          <li>Pitrufquén</li><li>Gorbea</li><li>Loncoche</li><li>Villarrica</li><li>Pucón</li><li>Toltén</li>
+        </ul>
+      </div>
+      <div class="coverage__zone reveal">
+        <h3 class="coverage__zone-title"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tree"/></svg> Malleco Norte</h3>
+        <ul class="coverage__sectors">
+          <li>Angol</li><li>Collipulli</li><li>Renaico</li><li>Ercilla</li><li>Curacautín</li><li>Lonquimay</li>
+        </ul>
+      </div>
+      <div class="coverage__zone reveal">
+        <h3 class="coverage__zone-title"><svg class="icon" viewBox="0 0 24 24"><use href="#i-mountain"/></svg> Malleco Sur</h3>
+        <ul class="coverage__sectors">
+          <li>Victoria</li><li>Traiguén</li><li>Purén</li><li>Los Sauces</li><li>Lumaco</li>
+        </ul>
+      </div>
+      <div class="coverage__zone coverage__zone--cta reveal">
+        <svg class="icon" viewBox="0 0 24 24"><use href="#i-map-pin"/><use href="#i-map-pin-d"/></svg>
+        <h3>¿No encuentras tu comuna?</h3>
+        <p>Escíbenos y te confirmamos si llegamos a tu ubicación</p>
+        <a href="https://wa.me/56986618409" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn-sm">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg> Consultar
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Services -->
-  <section class="services" id="servicios">
-    <div class="container">
-      <div class="section__header text-center">
-        <h2 class="section__title">Nuestros <span>Servicios</span></h2>
-        <p class="section__desc mx-auto">
-          Ofrecemos soluciones simples para la gestión de residuos no peligrosos 
-          en Temuco y sus alrededores. Servicio para constructoras, particulares, 
-          empresas y proyectos de toda escala.
-        </p>
-      </div>
-      <div class="trusted-bar row text-center justify-content-center g-0 mb-5 pb-2">
-        <div class="col-6 col-md">
-          <span class="trusted__number">+<span class="counter" data-target="50">0</span></span>
-          <span class="trusted__label d-block">Proyectos Completados</span>
-        </div>
-        <div class="col-6 col-md">
-          <span class="trusted__number"><span class="counter" data-target="100">0</span>%</span>
-          <span class="trusted__label d-block">Cobertura Temuco</span>
-        </div>
-        <div class="col-6 col-md">
-          <span class="trusted__number">24/7</span>
-          <span class="trusted__label d-block">Atención al Cliente</span>
-        </div>
-        <div class="col-6 col-md">
-          <span class="trusted__number">+<span class="counter" data-target="5">0</span></span>
-          <span class="trusted__label d-block">Años de Experiencia</span>
-        </div>
-        <div class="col-6 col-md">
-          <span class="trusted__number"><i class="fas fa-certificate"></i></span>
-          <span class="trusted__label d-block">Resolución Sanitaria</span>
-        </div>
-      </div>
-      <div class="row g-4 justify-content-center">
-        <div class="col-lg-6">
-          <div class="service-card h-100 tilt reveal reveal-delay-1">
-            <div class="service-card__icon">
-              <i class="fas fa-truck"></i>
+<section class="certification" id="certificacion">
+  <div class="container">
+    <div class="section__header text-center">
+      <h2 class="section__title">Resolución <span>Sanitaria</span></h2>
+      <p class="section__desc">Trabajamos con todas las garantías legales y ambientales para tu tranquilidad.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="certification__card reveal">
+          <div class="certification__icon">
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-shield"/></svg>
+          </div>
+          <h3>Certificados para Residuos No Peligrosos</h3>
+          <p>Contamos con <strong>Resolución Sanitaria</strong> que nos autoriza para la recolección, transporte y disposición final de residuos no peligrosos (escombros, tierra, hormigón, maderas, etc.). Esto asegura que tu empresa cumple con la normativa vigente al contratar nuestros servicios, evitando multas y problemas legales.</p>
+          <div class="certification__badges">
+            <div class="cert-badge">
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-circle"/><use href="#i-circle-check"/></svg>
+              <span>Recolección Autorizada</span>
             </div>
-            <h3 class="service-card__title">Arriendo de Contenedores</h3>
-            <p class="service-card__desc">
-              Contenedores de distintas capacidades para tu retiro de escombros en Temuco. 
-              Los dejamos en tu ubicación y los retiramos cuando tú decidas.
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="service-card h-100 tilt reveal reveal-delay-2">
-            <div class="service-card__icon">
-              <i class="fas fa-recycle"></i>
+            <div class="cert-badge">
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-circle"/><use href="#i-circle-check"/></svg>
+              <span>Transporte Certificado</span>
             </div>
-            <h3 class="service-card__title">Retiro de Escombros y Residuos</h3>
-            <p class="service-card__desc">
-              Servicio profesional de retiro de escombros en Temuco. Nos encargamos del retiro y disposición final de 
-              tierra, hormigón, maderas y residuos no peligrosos con Resolución Sanitaria.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="how-it-works" id="como-funciona">
-    <div class="container">
-      <div class="section__header text-center">
-        <h2 class="section__title">¿Cómo <span>Funciona?</span></h2>
-        <p class="section__desc mx-auto">
-          Tres pasos simples para tu retiro de escombros en Temuco.
-        </p>
-      </div>
-      <div class="steps mx-auto">
-        <div class="step reveal reveal-delay-1">
-          <div class="step__number">1</div>
-          <div class="step__content">
-            <h3>Nos Contactas</h3>
-            <p>Escríbenos por WhatsApp o llámanos. Cuéntanos qué necesitas y te daremos el contenedor adecuado.</p>
-          </div>
-        </div>
-        <div class="step reveal reveal-delay-2">
-          <div class="step__number">2</div>
-          <div class="step__content">
-            <h3>Instalamos el Contenedor</h3>
-            <p>Llevamos el contenedor a tu domicilio, obra o terreno. Lo llenas en los días que acordemos.</p>
-          </div>
-        </div>
-        <div class="step reveal reveal-delay-3">
-          <div class="step__number">3</div>
-          <div class="step__content">
-            <h3>Lo Retiramos</h3>
-            <p>Pasamos a buscar el contenedor y nos encargamos de la disposición final responsable de los residuos.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section class="gallery" id="galeria">
-    <div class="container">
-      <div class="section__header text-center">
-        <h2 class="section__title">Galería de <span>Trabajos</span></h2>
-        <p class="section__desc mx-auto">
-          Conoce algunos de los proyectos donde hemos entregado nuestros servicios 
-          de arriendo de contenedores y retiro de escombros en Temuco.
-        </p>
-      </div>
-      <div class="row g-3">
-        <div class="col-md-4 col-sm-6"><div class="gallery__item tilt reveal reveal-delay-1"><img src="img/gallery-1.jpg" alt="Contenedor Rizoma Space en obra" loading="lazy"></div></div>
-        <div class="col-md-4 col-sm-6"><div class="gallery__item tilt reveal reveal-delay-2"><img src="img/gallery-2.jpg" alt="Retiro de escombros Rizoma Space" loading="lazy"></div></div>
-        <div class="col-md-4 col-sm-6"><div class="gallery__item tilt reveal reveal-delay-3"><img src="img/gallery-3.jpg" alt="Contenedor para residuos no peligrosos" loading="lazy"></div></div>
-        <div class="col-md-4 col-sm-6"><div class="gallery__item tilt reveal reveal-delay-4"><img src="img/gallery-4.jpg" alt="Servicio de contenedor Rizoma Space" loading="lazy"></div></div>
-        <div class="col-md-4 col-sm-6"><div class="gallery__item tilt reveal reveal-delay-1"><img src="img/gallery-5.jpg" alt="Camión contenedor Rizoma Space" loading="lazy"></div></div>
-        <div class="col-md-4 col-sm-6"><div class="gallery__item tilt reveal reveal-delay-2"><img src="img/gallery-6.jpg" alt="Proyecto Rizoma Space Temuco" loading="lazy"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Certification -->
-  <section class="certification" id="certificacion">
-    <div class="container">
-      <div class="section__header text-center">
-        <h2 class="section__title">Resolución <span>Sanitaria</span></h2>
-        <p class="section__desc mx-auto">
-          Trabajamos con todas las garantías legales y ambientales para tu tranquilidad.
-        </p>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="certification__card reveal">
-            <div class="certification__icon">
-              <i class="fas fa-shield-alt"></i>
+            <div class="cert-badge">
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-circle"/><use href="#i-circle-check"/></svg>
+              <span>Disposición Final Responsable</span>
             </div>
-            <h3>Certificados para Residuos No Peligrosos</h3>
-            <p>
-              Contamos con <strong>Resolución Sanitaria</strong> que nos autoriza para la recolección, 
-              transporte y disposición final de residuos no peligrosos (escombros, tierra, hormigón, 
-              maderas, etc.). Esto asegura que tu empresa cumple con la normativa vigente al contratar 
-              nuestros servicios, evitando multas y problemas legales.
-            </p>
-            <div class="certification__badges">
-              <div class="cert-badge">
-                <i class="fas fa-check-circle"></i>
-                <span>Recolección Autorizada</span>
-              </div>
-              <div class="cert-badge">
-                <i class="fas fa-check-circle"></i>
-                <span>Transporte Certificado</span>
-              </div>
-              <div class="cert-badge">
-                <i class="fas fa-check-circle"></i>
-                <span>Disposición Final Responsable</span>
-              </div>
-            </div>
-            <a href="https://wa.me/56986618409" target="_blank" class="btn btn--primary">
-              <i class="fab fa-whatsapp"></i> Solicita más información
-            </a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Coverage -->
-  <section class="coverage" id="cobertura">
-    <div class="container">
-      <div class="section__header text-center">
-        <h2 class="section__title">Cobertura en <span>Temuco</span></h2>
-        <p class="section__desc mx-auto">
-          Cubrimos toda la comuna de Temuco y sectores aledaños. 
-          Consúltanos si tu ubicación está dentro de nuestra zona de servicio.
-        </p>
-      </div>
-      <div class="coverage__map">
-        <div class="coverage__placeholder">
-          <i class="fas fa-map-marked-alt"></i>
-          <p>Área de cobertura: <strong>Temuco</strong> y alrededores</p>
-          <a href="https://wa.me/56986618409" target="_blank" class="btn btn--primary">
-            <i class="fab fa-whatsapp"></i> Consulta si llegamos a tu sector
+          <div class="certification__extra">
+            <h4><svg class="icon" viewBox="0 0 24 24"><use href="#i-file-text"/><use href="#i-file-text-l"/></svg> Certificado de Disposición Final</h4>
+            <p>Por cada retiro emitimos un <strong>Certificado de Disposición Final</strong>, con el reporte de trazabilidad completo para el MINSAL (Ministerio de Salud). Este documento acredita que tus residuos fueron gestionados en instalaciones autorizadas, cumpliendo con la normativa sanitaria y ambiental vigente. Ideal para empresas que requieren respaldo documental en auditorías o fiscalizaciones.</p>
+          </div>
+          <a href="https://wa.me/56986618409" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg> Solicita más información
           </a>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Quote Form -->
-  <section class="quote" id="cotizacion">
-    <div class="container">
-      <div class="section__header text-center">
-        <h2 class="section__title">Solicita tu <span>Cotización</span></h2>
-        <p class="section__desc mx-auto">
-          Cuéntanos qué necesitas y te responderemos en minutos.
-        </p>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <form class="quote__form reveal" id="quoteForm">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <label class="form-label" for="name">Nombre completo *</label>
-                <input type="text" class="form-control" id="name" name="name" required placeholder="Tu nombre">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="company">Empresa</label>
-                <input type="text" class="form-control" id="company" name="company" placeholder="Nombre de tu empresa">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="email">Email *</label>
-                <input type="email" class="form-control" id="email" name="email" required placeholder="correo@ejemplo.cl">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="phone">Teléfono *</label>
-                <input type="tel" class="form-control" id="phone" name="phone" required placeholder="+56 9 XXXX XXXX">
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="service">Tipo de servicio</label>
-                <select class="form-select" id="service" name="service">
-                  <option value="">Selecciona...</option>
-                  <option value="arriendo-contenedor">Arriendo de Contenedor</option>
-                  <option value="retiro-escombros">Retiro de Escombros</option>
-                  <option value="otro">Otro</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="volume">Volumen estimado</label>
-                <select class="form-select" id="volume" name="volume">
-                  <option value="">Selecciona...</option>
-                  <option value="pequeno">Pequeño (menos de 3m³)</option>
-                  <option value="mediano">Mediano (3m³ - 7m³)</option>
-                  <option value="grande">Grande (más de 7m³)</option>
-                  <option value="no-seguro">No estoy seguro</option>
-                </select>
-              </div>
-              <div class="col-12">
-                <label class="form-label" for="location">Dirección del servicio</label>
-                <input type="text" class="form-control" id="location" name="location" placeholder="Temuco, sector / calle">
-              </div>
-              <div class="col-12">
-                <label class="form-label" for="message">Mensaje o detalles adicionales</label>
-                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Cuéntanos más sobre tu proyecto..."></textarea>
-              </div>
-            </div>
-            <button type="submit" class="btn btn--primary btn--large w-100 mt-4">
-              <i class="fab fa-whatsapp"></i> Enviar cotización por WhatsApp
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="contact" id="contacto">
-    <div class="container">
-      <div class="section__header text-center">
-        <h2 class="section__title">Contácta <span>con Nosotros</span></h2>
-        <p class="section__desc mx-auto">
-          Estamos listos para ayudarte. Elige el canal que prefieras.
-        </p>
-      </div>
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-4">
-          <div class="contact__card tilt text-center">
-            <div class="contact__card-icon">
-              <i class="fab fa-whatsapp"></i>
-            </div>
-            <h3>WhatsApp</h3>
-            <p>Respuesta rápida</p>
-            <a href="https://wa.me/56986618409" target="_blank" class="btn btn--whatsapp">+56 9 8661 8409</a>
-            <a href="https://wa.me/56988115108" target="_blank" class="btn btn--whatsapp mt-2">+56 9 8811 5108</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="contact__card tilt text-center">
-            <div class="contact__card-icon">
-              <i class="far fa-envelope"></i>
-            </div>
-            <h3>Email</h3>
-            <p>Escríbenos cuando quieras</p>
-            <a href="mailto:spacerizoma@gmail.com" class="btn btn--email">spacerizoma@gmail.com</a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="contact__card tilt text-center">
-            <div class="contact__card-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <h3>Ubicación</h3>
-            <p>Temuco, Chile</p>
-            <span class="contact__link">Te cubrimos en toda la comuna</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-lg-4">
-          <img src="img/logo.png" alt="Rizoma Space" class="footer__logo-img" onerror="this.style.display='none'">
-          <p class="footer__text">
-            Rizoma Space - Retiro de escombros en Temuco. Gestión profesional de residuos no peligrosos.
-          </p>
-        </div>
-        <div class="col-lg-4">
-          <div class="footer__links">
-            <h4>Enlaces</h4>
-            <ul>
-              <li><a href="#inicio">Inicio</a></li>
-              <li><a href="#servicios">Servicios</a></li>
-              <li><a href="#galeria">Galería</a></li>
-              <li><a href="#como-funciona">Cómo Funciona</a></li>
-              <li><a href="#certificacion">Certificación</a></li>
-              <li><a href="#cobertura">Cobertura</a></li>
-              <li><a href="#contacto">Contacto</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="footer__contact">
-            <h4>Contacto</h4>
-            <a href="https://wa.me/56986618409" target="_blank"><i class="fab fa-whatsapp"></i> +56 9 8661 8409</a>
-            <a href="https://wa.me/56988115108" target="_blank"><i class="fab fa-whatsapp"></i> +56 9 8811 5108</a>
-            <a href="mailto:spacerizoma@gmail.com"><i class="far fa-envelope"></i> spacerizoma@gmail.com</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <div class="container">
-        <p>&copy; 2026 Rizoma Space. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/56986618409" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
   </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="section__header text-center">
+      <h2 class="section__title">Contácta <span>con Nosotros</span></h2>
+      <p class="section__desc">Estamos listos para ayudarte. Elige el canal que prefieras.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-3 col-md-6">
+        <div class="contact__card tilt">
+          <div class="contact__card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
+          </div>
+          <h3>WhatsApp</h3>
+          <p>Respuesta rápida</p>
+          <a href="https://wa.me/56986618409" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp">+56 9 8661 8409</a>
+          <a href="https://wa.me/56988115108" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp mt-2">+56 9 8811 5108</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="contact__card tilt">
+          <div class="contact__card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-envelope"/><use href="#i-envelope-l"/></svg>
+          </div>
+          <h3>Email</h3>
+          <p>Escríbenos cuando quieras</p>
+          <a href="mailto:spacerizoma@gmail.com" class="btn btn--email">spacerizoma@gmail.com</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="contact__card tilt">
+          <div class="contact__card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-instagram"/><use href="#i-instagram-c"/><use href="#i-instagram-d"/></svg>
+          </div>
+          <h3>Instagram</h3>
+          <p>Síguenos y ve nuestros trabajos</p>
+          <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="btn btn--instagram">@rizoma_space_temuco</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="contact__card tilt">
+          <div class="contact__card-icon">
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-facebook"/></svg>
+          </div>
+          <h3>Facebook</h3>
+          <p>Síguenos y entérate de novedades</p>
+          <a href="https://www.facebook.com/profile.php?id=61576707989615" target="_blank" rel="noopener noreferrer" class="btn btn--facebook">Rizoma Space</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="Rizoma Space" class="footer__logo-img" width="64" height="64"></picture>
+        <p class="footer__text">Rizoma Space - Retiro de escombros en Temuco. Gestión profesional de residuos no peligrosos.</p>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer__links">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#como-funciona">Cómo Funciona</a></li>
+            <li><a href="#cotizacion">Cotizar</a></li>
+            <li><a href="#certificacion">Certificación</a></li>
+            <li><a href="#cobertura">Cobertura</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer__contact">
+          <h4>Contacto</h4>
+          <a href="https://wa.me/56986618409" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg> +56 9 8661 8409</a>
+          <a href="https://wa.me/56988115108" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg> +56 9 8811 5108</a>
+          <a href="mailto:spacerizoma@gmail.com"><svg class="icon" viewBox="0 0 24 24"><use href="#i-envelope"/><use href="#i-envelope-l"/></svg> spacerizoma@gmail.com</a>
+          <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24"><use href="#i-instagram"/><use href="#i-instagram-c"/><use href="#i-instagram-d"/></svg> @rizoma_space_temuco</a>
+          <a href="https://www.facebook.com/profile.php?id=61576707989615" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24"><use href="#i-facebook"/></svg> Rizoma Space</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <p>&copy; 2026 Rizoma Space. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/56986618409" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="WhatsApp">
+  <svg class="icon" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
+</a>
+
+<div class="thankyou-toast" id="thankyouToast">
+  <div class="thankyou-toast__content">
+    <div class="thankyou-toast__icon">
+      <svg class="icon" viewBox="0 0 24 24"><use href="#i-circle"/><use href="#i-circle-check"/></svg>
+    </div>
+    <h3 class="thankyou-toast__title">¡Cotización enviada!</h3>
+    <p class="thankyou-toast__text">Gracias por contactarnos. Te responderemos a la brevedad por WhatsApp.</p>
+    <button class="btn btn--primary btn-sm" id="newQuoteBtn">
+      <svg class="icon icon-sm" viewBox="0 0 24 24"><use href="#i-redo"/><use href="#i-redo-a"/></svg> Nueva cotización
+    </button>
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" media="print" onload="this.media='all';this.onload=null">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+(function(){'use strict';
+
+// Navbar toggle
+var navToggle = document.getElementById('navToggle');
+var navMenu = document.getElementById('navbarNav');
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', function() {
+    navMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', navMenu.classList.contains('open'));
+  });
+  navMenu.querySelectorAll('.nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+// Header shadow on scroll
+var header = document.querySelector('.navbar');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 50) {
+    header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+    header.style.borderBottomColor = 'rgba(0,0,0,0.06)';
+  } else {
+    header.style.boxShadow = 'none';
+    header.style.borderBottomColor = 'var(--gray-200)';
+  }
+});
+
+// Scroll reveal
+var revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+
+// Counter animation
+function animateCounter(el) {
+  var target = parseInt(el.dataset.target);
+  var duration = 1500;
+  var start = performance.now();
+  function update(now) {
+    var progress = Math.min((now - start) / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target);
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(update);
+}
+var counterObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.counter').forEach(function(el) { counterObserver.observe(el); });
+
+// 3D Tilt
+document.querySelectorAll('.tilt').forEach(function(card) {
+  card.addEventListener('mousemove', function(e) {
+    var rect = card.getBoundingClientRect();
+    var x = e.clientX - rect.left, y = e.clientY - rect.top;
+    card.style.setProperty('--rx', ((y - rect.height/2) / rect.height * -8) + 'deg');
+    card.style.setProperty('--ry', ((x - rect.width/2) / rect.width * 8) + 'deg');
+  });
+  card.addEventListener('mouseleave', function() {
+    card.style.setProperty('--rx', '0deg');
+    card.style.setProperty('--ry', '0deg');
+  });
+});
+
+// Form validation & WhatsApp
+var sendBtn = document.getElementById('sendQuoteBtn');
+var newQuoteBtn = document.getElementById('newQuoteBtn');
+var toast = document.getElementById('thankyouToast');
+
+function getVal(id) { return (document.getElementById(id) || {}).value || ''; }
+function showError(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.add('show');
+}
+function hideError(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.remove('show');
+}
+function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+function sendWhatsApp() {
+  var name = getVal('qname').trim();
+  var email = getVal('qemail').trim();
+  var phone = getVal('qphone').trim();
+  var location = getVal('qlocation').trim();
+  var company = getVal('qcompany').trim();
+  var when = getVal('qwhen');
+  var message = getVal('qmessage').trim();
+
+  var valid = true;
+  hideError('nameError'); hideError('emailError'); hideError('phoneError'); hideError('locationError');
+
+  if (name.split(' ').length < 2) { showError('nameError'); valid = false; }
+  if (!validateEmail(email)) { showError('emailError'); valid = false; }
+  if (!phone || phone.length !== 8 || !/^\d+$/.test(phone)) { showError('phoneError'); valid = false; }
+  if (!location) { showError('locationError'); valid = false; }
+
+  if (!valid) return;
+
+  var msg = 'Hola Rizoma Space, quiero cotizar:%0A%0A';
+  msg += '\u2501\u2501 DATOS DEL CLIENTE \u2501\u2501%0A';
+  msg += '*Nombre:* ' + name + '%0A';
+  if (company) msg += '*Empresa:* ' + company + '%0A';
+  msg += '*Email:* ' + email + '%0A';
+  msg += '*Tel\u00e9fono:* +56 9 ' + phone + '%0A';
+  msg += '\u2501\u2501 DETALLE DEL SERVICIO \u2501\u2501%0A';
+  if (location) msg += '*Direcci\u00f3n:* ' + location + '%0A';
+  if (when) msg += '*Fecha solicitada:* ' + when + '%0A';
+  if (message) msg += '*Detalles:* ' + message + '%0A';
+
+  window.open('https://wa.me/56986618409?text=' + encodeURIComponent(msg.replace(/%0A/g, '\n').replace(/\*/g, '')).replace(/%250A/g, '%0A').replace(/%252A/g, '*'), '_blank');
+
+  if (toast) toast.classList.add('show');
+}
+
+if (sendBtn) sendBtn.addEventListener('click', sendWhatsApp);
+if (newQuoteBtn && toast) {
+  newQuoteBtn.addEventListener('click', function() {
+    toast.classList.remove('show');
+    ['qname','qcompany','qemail','qphone','qlocation','qwhen','qmessage'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+    ['nameError','emailError','phoneError','locationError'].forEach(hideError);
+    document.getElementById('qname').focus();
+  });
+}
+
+// Hero background fallback
+(function() {
+  var heroBg = document.querySelector('.hero__bg');
+  if (!heroBg) return;
+  var isMobile = window.innerWidth <= 768;
+  var img = new Image();
+  img.onload = function() {
+    heroBg.style.backgroundImage = isMobile ? "url('img/hero-truck-mobile.webp')" : "url('img/hero-truck.webp')";
+  };
+  img.onerror = function() {
+    heroBg.style.backgroundImage = isMobile ? "url('img/hero-truck-mobile.png')" : "url('img/hero-truck.png')";
+  };
+  img.src = 'img/hero-truck.webp';
+})();
+
+})();
+</script>
 </body>
 </html>
