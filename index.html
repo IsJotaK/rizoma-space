@@ -296,23 +296,15 @@
 </section>
 
 <style>
-.gallery__carousel{position:relative;overflow:hidden;border-radius:var(--radius-lg);background:var(--green-50)}
-.gallery__track{display:flex;transition:transform .5s cubic-bezier(.25,.46,.45,.94)}
-.gallery__slide{flex:0 0 100%;min-width:0}
-.gallery__slide a{display:block;border-radius:var(--radius);overflow:hidden}
-.gallery__slide img{width:100%;height:400px;object-fit:cover;transition:transform .5s ease}
-.gallery__slide a:hover img{transform:scale(1.05)}
-.gallery__arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.9);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.12);transition:all .3s ease;color:var(--green-800)}
-.gallery__arrow:hover{background:var(--white);color:var(--green-600);box-shadow:0 6px 20px rgba(0,0,0,.18)}
-.gallery__arrow--prev{left:16px}
-.gallery__arrow--next{right:16px}
-.gallery__arrow .icon{width:24px;height:24px}
-.gallery__dots{display:flex;justify-content:center;gap:10px;margin-top:24px}
-.gallery__dot{width:12px;height:12px;border-radius:50%;border:2px solid var(--green-600);background:transparent;cursor:pointer;transition:all .3s ease;padding:0}
-.gallery__dot.active{background:var(--green-600);transform:scale(1.2)}
-.gallery__dot:hover{background:var(--green-300)}
-@media(max-width:768px){.gallery__slide img{height:280px}.gallery__arrow{width:40px;height:40px}.gallery__arrow--prev{left:8px}.gallery__arrow--next{right:8px}}
-@media(max-width:480px){.gallery__slide img{height:220px}}
+@keyframes gallery-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.gallery__scroll-wrap{mask:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);-webkit-mask:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);overflow:hidden;padding:12px 0}
+.gallery__scroll-track{display:flex;gap:24px;width:max-content;animation:gallery-scroll 30s linear infinite}
+.gallery__scroll-track:hover{animation-play-state:paused}
+.gallery__scroll-item{flex-shrink:0;width:320px;height:240px;border-radius:var(--radius);overflow:hidden;transition:transform .4s ease,box-shadow .4s ease;cursor:pointer}
+.gallery__scroll-item:hover{transform:scale(1.05);box-shadow:0 16px 40px rgba(0,0,0,.15)}
+.gallery__scroll-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+@media(max-width:768px){.gallery__scroll-item{width:260px;height:200px}.gallery__scroll-track{gap:16px;animation-duration:20s}}
+@media(max-width:480px){.gallery__scroll-item{width:200px;height:160px}.gallery__scroll-track{gap:12px;animation-duration:16s}}
 </style>
 <section class="gallery section--alt" id="galeria">
   <div class="container">
@@ -320,22 +312,21 @@
       <h2 class="section__title">Galería de <span>Trabajos</span></h2>
       <p class="section__desc">Conoce algunos de los proyectos donde hemos entregado nuestros servicios de arriendo de contenedores y retiro de escombros en Temuco.</p>
     </div>
-    <div class="gallery__carousel">
-      <div class="gallery__track" id="galleryTrack">
-        <div class="gallery__slide"><a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__item tilt reveal"><picture><source srcset="img/gallery-1.webp" type="image/webp"><img src="img/gallery-1.jpg" alt="Contenedor Rizoma Space en obra" loading="lazy" width="400" height="300"></picture></a></div>
-        <div class="gallery__slide"><a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__item tilt reveal"><picture><source srcset="img/gallery-2.webp" type="image/webp"><img src="img/gallery-2.jpg" alt="Retiro de escombros Rizoma Space" loading="lazy" width="400" height="300"></picture></a></div>
-        <div class="gallery__slide"><a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__item tilt reveal"><picture><source srcset="img/gallery-3.webp" type="image/webp"><img src="img/gallery-3.jpg" alt="Contenedor para residuos no peligrosos" loading="lazy" width="400" height="300"></picture></a></div>
-        <div class="gallery__slide"><a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__item tilt reveal"><picture><source srcset="img/gallery-4.webp" type="image/webp"><img src="img/gallery-4.jpg" alt="Servicio de contenedor Rizoma Space" loading="lazy" width="400" height="300"></picture></a></div>
-        <div class="gallery__slide"><a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__item tilt reveal"><picture><source srcset="img/gallery-5.webp" type="image/webp"><img src="img/gallery-5.jpg" alt="Camión contenedor Rizoma Space" loading="lazy" width="400" height="300"></picture></a></div>
-        <div class="gallery__slide"><a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__item tilt reveal"><picture><source srcset="img/gallery-6.webp" type="image/webp"><img src="img/gallery-6.jpg" alt="Proyecto Rizoma Space Temuco" loading="lazy" width="400" height="300"></picture></a></div>
-      </div>
-      <button class="gallery__arrow gallery__arrow--prev" id="galleryPrev" aria-label="Anterior">
-        <svg class="icon" viewBox="0 0 24 24"><use href="#i-chevron-left"/></svg>
-      </button>
-      <button class="gallery__arrow gallery__arrow--next" id="galleryNext" aria-label="Siguiente">
-        <svg class="icon" viewBox="0 0 24 24"><use href="#i-chevron-right"/></svg>
-      </button>
-      <div class="gallery__dots" id="galleryDots"></div>
+  </div>
+  <div class="gallery__scroll-wrap">
+    <div class="gallery__scroll-track" id="galleryTrack">
+      <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__scroll-item reveal"><picture><source srcset="img/gallery-1.webp" type="image/webp"><img src="img/gallery-1.jpg" alt="Contenedor Rizoma Space en obra" loading="lazy"></picture></a>
+      <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__scroll-item reveal"><picture><source srcset="img/gallery-2.webp" type="image/webp"><img src="img/gallery-2.jpg" alt="Retiro de escombros Rizoma Space" loading="lazy"></picture></a>
+      <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__scroll-item reveal"><picture><source srcset="img/gallery-3.webp" type="image/webp"><img src="img/gallery-3.jpg" alt="Contenedor para residuos no peligrosos" loading="lazy"></picture></a>
+      <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__scroll-item reveal"><picture><source srcset="img/gallery-4.webp" type="image/webp"><img src="img/gallery-4.jpg" alt="Servicio de contenedor Rizoma Space" loading="lazy"></picture></a>
+      <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__scroll-item reveal"><picture><source srcset="img/gallery-5.webp" type="image/webp"><img src="img/gallery-5.jpg" alt="Camión contenedor Rizoma Space" loading="lazy"></picture></a>
+      <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__scroll-item reveal"><picture><source srcset="img/gallery-6.webp" type="image/webp"><img src="img/gallery-6.jpg" alt="Proyecto Rizoma Space Temuco" loading="lazy"></picture></a>
+      <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__scroll-item reveal"><picture><source srcset="img/gallery-1.webp" type="image/webp"><img src="img/gallery-1.jpg" alt="Contenedor Rizoma Space en obra" loading="lazy"></picture></a>
+      <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__scroll-item reveal"><picture><source srcset="img/gallery-2.webp" type="image/webp"><img src="img/gallery-2.jpg" alt="Retiro de escombros Rizoma Space" loading="lazy"></picture></a>
+      <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__scroll-item reveal"><picture><source srcset="img/gallery-3.webp" type="image/webp"><img src="img/gallery-3.jpg" alt="Contenedor para residuos no peligrosos" loading="lazy"></picture></a>
+      <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__scroll-item reveal"><picture><source srcset="img/gallery-4.webp" type="image/webp"><img src="img/gallery-4.jpg" alt="Servicio de contenedor Rizoma Space" loading="lazy"></picture></a>
+      <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__scroll-item reveal"><picture><source srcset="img/gallery-5.webp" type="image/webp"><img src="img/gallery-5.jpg" alt="Camión contenedor Rizoma Space" loading="lazy"></picture></a>
+      <a href="https://www.instagram.com/rizoma_space_temuco/" target="_blank" rel="noopener noreferrer" class="gallery__scroll-item reveal"><picture><source srcset="img/gallery-6.webp" type="image/webp"><img src="img/gallery-6.jpg" alt="Proyecto Rizoma Space Temuco" loading="lazy"></picture></a>
     </div>
   </div>
 </section>
@@ -702,16 +693,6 @@ if (newQuoteBtn && toast) {
   img.src = 'img/hero-truck.webp';
 })();
 })();
-
-// Gallery carousel
-(function(){var track=document.getElementById('galleryTrack');var prevBtn=document.getElementById('galleryPrev');var nextBtn=document.getElementById('galleryNext');var dotsContainer=document.getElementById('galleryDots');if(!track)return;var slides=track.querySelectorAll('.gallery__slide');var total=slides.length;var current=0;
-for(var i=0;i<total;i++){(function(idx){var dot=document.createElement('button');dot.className='gallery__dot'+(idx===0?' active':'');dot.setAttribute('aria-label','Ir a imagen '+(idx+1));dot.addEventListener('click',function(){goTo(idx)});dotsContainer.appendChild(dot)})(i)}
-function goTo(idx){current=idx;track.style.transform='translateX(-'+(current*100)+'%)';dotsContainer.querySelectorAll('.gallery__dot').forEach(function(d,i){d.classList.toggle('active',i===current)})}
-function nextSlide(){goTo((current+1)%total)}
-function prevSlide(){goTo((current-1+total)%total)}
-if(prevBtn)prevBtn.addEventListener('click',prevSlide)
-if(nextBtn)nextBtn.addEventListener('click',nextSlide)
-document.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')prevSlide();if(e.key==='ArrowRight')nextSlide()})})();
 
 // Back to top
 (function(){var btn=document.getElementById('backToTop');if(!btn)return;window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>400)});btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
