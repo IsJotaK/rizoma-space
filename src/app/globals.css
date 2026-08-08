@@ -173,21 +173,20 @@ button { font-family: inherit; }
 .content:has(.ved) { max-width: none; width: 100%; padding: 16px 20px; }
 .ved__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
 .ved__head-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-.ved__head { padding-right: 400px; }
 .ved__dirty { font-size: 13px; font-weight: 600; color: var(--green-700); background: var(--green-100); padding: 7px 12px; border-radius: 20px; }
 .ved__ver { font-size: 12px; font-weight: 600; color: var(--green-800); background: var(--green-100); border: 1px solid var(--green-300); padding: 5px 10px; border-radius: 20px; }
 .ved__dirty.is-dirty { color: #92400e; background: #fef3c7; }
-.ved__body { display: flex; gap: 20px; align-items: stretch; width: 100%; flex: 1; min-height: 0; position: relative; }
+.ved__body { display: flex; gap: 20px; align-items: stretch; width: 100%; flex: 1; min-height: 0; position: relative; overflow: hidden; }
 .ved__canvas {
   flex: 1; min-width: 0; background: #fff; border: 1px solid var(--line);
-  border-radius: var(--radius); overflow: auto; position: relative; margin-right: 400px;
+  border-radius: var(--radius); overflow: auto; position: relative;
 }
 .editor-preview { min-height: 100%; }
 .editor-preview__loading { padding: 70px 20px; text-align: center; color: var(--muted); font-size: 14px; }
 .ved__panel {
-  position: fixed; right: 20px; top: 16px; bottom: 16px; width: 380px;
+  flex: 0 0 380px; max-height: 100%; overflow-y: auto;
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 20px; overflow: auto; box-shadow: var(--shadow);
+  padding: 20px; box-shadow: var(--shadow);
 }
 .ved__empty { color: var(--muted); text-align: center; padding: 40px 10px; font-size: 14px; }
 .ved__empty-icon { font-size: 30px; margin-bottom: 10px; }
@@ -213,8 +212,7 @@ button { font-family: inherit; }
 .confirm__actions { display: flex; gap: 10px; justify-content: flex-end; }
 @media (max-width: 1100px) {
   .ved { height: auto; }
-  .ved__body { flex-direction: column; flex: none; }
-  .ved__head { padding-right: 0; }
-  .ved__panel { width: 100%; height: auto; max-height: 55vh; position: static; right: auto; top: auto; bottom: auto; }
-  .ved__canvas { height: 70vh; min-height: 420px; position: static; margin-right: 0; }
+  .ved__body { flex-direction: column; flex: none; overflow: visible; }
+  .ved__panel { flex: none; width: 100%; max-height: 55vh; }
+  .ved__canvas { height: 70vh; min-height: 420px; position: static; }
 }
