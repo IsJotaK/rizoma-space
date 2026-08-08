@@ -10,8 +10,8 @@ interface Sel {
   slug?: string;
 }
 
-export default function PreviewShell() {
-  const [data, setData] = useState<SiteData | null>(null);
+export default function PreviewShell({ initial }: { initial: SiteData }) {
+  const [data, setData] = useState<SiteData | null>(initial ?? null);
   const [selected, setSelected] = useState<Sel | null>(null);
 
   useEffect(() => {
@@ -22,7 +22,6 @@ export default function PreviewShell() {
       setSelected(d.selected ?? null);
     };
     window.addEventListener("message", onMsg);
-    window.parent.postMessage({ type: "ved-ready" }, "*");
     return () => window.removeEventListener("message", onMsg);
   }, []);
 
