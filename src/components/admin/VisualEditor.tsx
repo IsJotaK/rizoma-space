@@ -27,6 +27,7 @@ interface FieldSpecLike {
   type: string;
   label?: string;
   hint?: string;
+  warn?: string;
   options?: string[];
 }
 
@@ -280,6 +281,14 @@ export default function VisualEditor({ initial }: { initial: RawData }) {
 
               {config.fields
                 .filter((f) => !(selected?.slug !== undefined && f.name === "slug"))
+                .some((f) => f.warn) && (
+                <div className="ved__seo-note">
+                  ⚠️ Algunos campos de esta sección afectan el posicionamiento (SEO) de la página.
+                </div>
+              )}
+
+              {config.fields
+                .filter((f) => !(selected?.slug !== undefined && f.name === "slug"))
                 .map((field) => (
                   <div className="ved__field" key={field.name}>
                     {field.type === "image" ? null : (
@@ -291,6 +300,7 @@ export default function VisualEditor({ initial }: { initial: RawData }) {
                       onCommit={(v) => patchField(field.name, field.type, v)}
                     />
                     {field.hint && <span className="hint">{field.hint}</span>}
+                    {field.warn && <span className="ved__warn">⚠️ {field.warn}</span>}
                   </div>
                 ))}
 

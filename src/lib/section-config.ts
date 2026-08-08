@@ -14,6 +14,7 @@ export interface FieldSpec {
   options?: string[];
   hint?: string;
   required?: boolean;
+  warn?: string; // aviso de impacto (p.ej. afecta SEO / posicionamiento)
 }
 
 export interface SectionConfig {
@@ -37,8 +38,8 @@ export const SECTION_META: Record<string, SectionConfig> = {
     fields: [
       { name: "badge_1", label: "Sello 1", type: "text" },
       { name: "badge_2", label: "Sello 2", type: "text" },
-      { name: "titulo", label: "Título (antes) ", type: "text" },
-      { name: "titulo_accento", label: "Palabra destacada", type: "text" },
+      { name: "titulo", label: "Título (antes) ", type: "text", warn: "El H1 es clave para el posicionamiento. Evita cambios frecuentes." },
+      { name: "titulo_accento", label: "Palabra destacada", type: "text", warn: "El H1 es clave para el posicionamiento. Evita cambios frecuentes." },
       { name: "titulo_after", label: "Título (despu\u00e9s)", type: "text" },
       { name: "subtitulo", label: "Subtítulo", type: "textarea" },
       { name: "boton_primario_texto", label: "Botón primario", type: "text" },
@@ -129,8 +130,8 @@ export const SECTION_META: Record<string, SectionConfig> = {
     key: "secciones", title: "Títulos de sección", table: "secciones", icon: "🏷",
     description: "Títulos y subtítulos de cada bloque de la página.",
     fields: [
-      { name: "slug", label: "Bloque", type: "text", required: true, hint: "servicios, galeria, cotiza, cobertura, contacto, como-funciona, certificacion" },
-      { name: "titulo", label: "Título", type: "text" },
+      { name: "slug", label: "Bloque", type: "text", required: true, warn: "No cambies el slug: rompe los enlaces internos y el posicionamiento de esta sección.", hint: "servicios, galeria, cotiza, cobertura, contacto, como-funciona, certificacion" },
+      { name: "titulo", label: "Título", type: "text", warn: "Los H2 afectan el posicionamiento de la sección." },
       { name: "descripcion", label: "Descripción", type: "textarea" },
     ],
   },
@@ -176,10 +177,10 @@ export const SECTION_META: Record<string, SectionConfig> = {
     key: "seo", title: "SEO y Configuración", table: "config_sitio", single: true, icon: "⚙️",
     description: "Metadatos, pie de página y número de cotización.",
     fields: [
-      { name: "nombre_sitio", label: "Nombre del sitio", type: "text" },
-      { name: "meta_titulo", label: "Título SEO", type: "text" },
-      { name: "meta_descripcion", label: "Descripción SEO", type: "textarea" },
-      { name: "og_titulo", label: "Open Graph título", type: "text" },
+      { name: "nombre_sitio", label: "Nombre del sitio", type: "text", warn: "Afecta los metadatos y el posicionamiento global." },
+      { name: "meta_titulo", label: "Título SEO", type: "text", warn: "Meta título: influye directamente en el posicionamiento y en los clics." },
+      { name: "meta_descripcion", label: "Descripción SEO", type: "textarea", warn: "Meta descripción: influye en el CTR en buscadores." },
+      { name: "og_titulo", label: "Open Graph título", type: "text", warn: "Texto que se muestra al compartir el link en redes." },
       { name: "og_descripcion", label: "Open Graph descripción", type: "textarea" },
       { name: "footer_texto", label: "Pie de página", type: "textarea" },
       { name: "cotizacion_whatsapp", label: "Número WhatsApp cotización", type: "text" },

@@ -193,6 +193,8 @@ button { font-family: inherit; }
 .ved__panel-title { font-weight: 800; font-size: 16px; margin-bottom: 2px; }
 .ved__panel-sub { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
 .ved__field { margin-top: 14px; }
+.ved__seo-note { margin-top: 12px; padding: 10px 12px; font-size: 12.5px; line-height: 1.45; color: #92400e; background: #fef3c7; border: 1px solid #fcd34d; border-radius: 8px; box-sizing: border-box; }
+.ved__warn { display: block; margin-top: 6px; font-size: 12px; line-height: 1.4; color: #92400e; background: #fef3c7; border: 1px solid #fde68a; padding: 8px 10px; border-radius: 6px; }
 .ved__row-actions { display: flex; gap: 10px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); }
 .switch-row { display: flex; align-items: center; gap: 10px; cursor: pointer; }
 .switch-row input { position: absolute; opacity: 0; pointer-events: none; }
