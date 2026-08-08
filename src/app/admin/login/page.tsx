@@ -33,7 +33,7 @@ export default function LoginPage() {
     <div className="login">
       <form className="login__card" onSubmit={handleSubmit}>
         <div className="login__brand">
-          <span className="login__brand-logo">R</span>
+          <img className="login__brand-logo" src="/img/logo.png" alt="Rizoma Space" width="44" height="44" />
           <div>
             <h1 className="login__title">Rizoma Space</h1>
           </div>

@@ -5,7 +5,15 @@ export const metadata: Metadata = {
   title: "Rizoma Space | Arriendo de Contenedores y Retiro de Escombros - Temuco",
   description:
     "Rizoma Space: arriendo de contenedores para escombros y residuos no peligrosos en Temuco. Retiro con Resolución Sanitaria.",
-  icons: { icon: "/img/favicon-32x32.png" },
+  icons: {
+    icon: [
+      { url: "/img/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/img/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/img/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+    ],
+    apple: [{ url: "/img/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/img/favicon-32x32.png",
+  },
   metadataBase: new URL("https://rizoma-space.vercel.app"),
 };
 

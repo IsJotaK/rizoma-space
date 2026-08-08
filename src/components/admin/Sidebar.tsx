@@ -41,7 +41,7 @@ export default function Sidebar({ userEmail }: { userEmail: string }) {
     <aside className={`sidebar ${open ? "open" : ""}`}>
       <div style={{ display: "flex", alignItems: "center" }}>
         <div className="sidebar__brand">
-          <span className="sidebar__logo">R</span>
+          <img className="sidebar__logo" src="/img/logo.webp" alt="Rizoma Space" width="38" height="38" />
           <span className="sidebar__brand-text">Rizoma Space</span>
         </div>
         <button className="sidebar-toggle" onClick={() => setOpen((v) => !v)} aria-label="Menú">
