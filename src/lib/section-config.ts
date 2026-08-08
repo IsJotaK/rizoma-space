@@ -189,7 +189,7 @@ export const SECTION_META: Record<string, SectionConfig> = {
 };
 
 export const ICONS = [
-  "truck", "trash", "circle-check", "recycle", "clipboard", "building",
-  "city", "water", "tree", "mountain", "map-pin", "shield-check", "phone",
-  "whatsapp", "instagram", "facebook", "email", "document", "clock",
+  "truck", "trash", "circle-check", "clipboard", "building",
+  "city", "water", "tree", "mountain", "map-pin", "shield-check",
+  "whatsapp", "instagram", "facebook", "email", "document",
 ];

@@ -210,7 +210,7 @@ export const DEFAULT_SITE: SiteData = {
     { numero: 50, prefijo: "+", sufijo: "", etiqueta: "Proyectos Completados" },
     { numero: 100, sufijo: "%", etiqueta: "Cobertura Temuco" },
     { texto_fijo: "24/7", etiqueta: "Atención al Cliente" },
-    { numero: 1, prefijo: "+", etiqueta: "Año de Experiencia" },
+    { numero: 5, prefijo: "+", etiqueta: "Años de Experiencia" },
     { icono: "shield-check", etiqueta: "Resolución Sanitaria" },
   ],
   services: [
@@ -262,19 +262,19 @@ export const DEFAULT_SITE: SiteData = {
   pasos: [
     {
       numero: 1,
-      titulo: "NosContactas",
+      titulo: "Nos Contactas",
       descripcion:
         "Escríbenos por WhatsApp o llámanos. Cuéntanos qué necesitas y te daremos el contenedor adecuado.",
     },
     {
       numero: 2,
-      titulo: "Instalamos elContenedor",
+      titulo: "Instalamos el Contenedor",
       descripcion:
         "Llevamos el contenedor a tu domicilio, obra o terreno. Lo llenas en los días que acordemos.",
     },
     {
       numero: 3,
-      titulo: "LoRetiramos",
+      titulo: "Lo Retiramos",
       descripcion:
         "Pasamos a buscar el contenedor y nos encargamos de la disposición final responsable de los residuos.",
     },
@@ -321,11 +321,11 @@ export const DEFAULT_SITE: SiteData = {
     { file_url: "img/gallery-6.jpg", titulo: "Proyecto en Temuco" },
   ],
   zonas: [
-    { titulo: "Temuco", icono: "building", sectores: ["Centro", "Pueblo Nuevo", "Amanecer", "Santa Rosa", "LasQuilas", "Labranza", "ParqueCostanera"] },
-    { titulo: "Cautín Norte", icono: "city", sectores: ["PadreLasCasas", "Lautaro", "Vilcún", "Freire","NuevaImperial", "Cholchol"] },
+    { titulo: "Temuco", icono: "building", sectores: ["Centro", "Pueblo Nuevo", "Amanecer", "Santa Rosa", "Las Quilas", "Labranza", "Parque Costanera"] },
+    { titulo: "Cautín Norte", icono: "city", sectores: ["Padre Las Casas", "Lautaro", "Vilcún", "Freire", "Nueva Imperial", "Cholchol"] },
     { titulo: "Cautín Sur", icono: "water", sectores: ["Pitrufquén", "Gorbea", "Loncoche", "Villarrica", "Pucón","Toltén"] },
     { titulo: "Malleco Norte", icono: "tree", sectores: ["Angol", "Collipulli", "Renaico", "Ercilla", "Curacautín", "Lonquimay"] },
-    { titulo: "Malleco Sur", icono: "mountain", sectores: ["Victoria", "Traiguén", "Purén", "LosSauces", "Lumaco"] },
+    { titulo: "Malleco Sur", icono: "mountain", sectores: ["Victoria", "Traiguén", "Purén", "Los Sauces", "Lumaco"] },
   ],
   cta: {
     titulo: "¿No encuentras tu comuna?",
