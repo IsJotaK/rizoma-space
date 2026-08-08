@@ -201,6 +201,15 @@ button { font-family: inherit; }
 .switch-row input:checked + .switcher { background: var(--green-500); }
 .switch-row input:checked + .switcher:after { left: 18px; }
 .switch-label { font-size: 13px; color: var(--ink); font-weight: 600; }
+.confirm__overlay { position: fixed; inset: 0; background: rgba(6, 30, 18, 0.55); z-index: 1000; }
+.confirm {
+  position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  z-index: 1001; width: min(440px, calc(100vw - 40px)); background: #fff;
+  border-radius: var(--radius); padding: 24px; box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+.confirm h3 { margin: 0 0 10px; font-weight: 800; font-size: 18px; }
+.confirm p { margin: 0 0 22px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.confirm__actions { display: flex; gap: 10px; justify-content: flex-end; }
 @media (max-width: 1100px) {
   .ved { height: auto; }
   .ved__body { flex-direction: column; flex: none; }

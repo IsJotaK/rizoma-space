@@ -76,6 +76,7 @@ export default function VisualEditor({ initial }: { initial: RawData }) {
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState<{ ok: boolean; msg: string } | null>(null);
   const [deleted, setDeleted] = useState<{ table: string; id: number }[]>([]);
+  const [confirmPublish, setConfirmPublish] = useState(false);
 
   const data = useMemo(() => assembleSiteData(raw as unknown as RawData), [raw]);
 
@@ -245,7 +246,7 @@ export default function VisualEditor({ initial }: { initial: RawData }) {
           <button className="btn btn--outline" onClick={discard} disabled={busy || dirtyCount === 0}>
             Descartar
           </button>
-          <button className="btn btn--primary" onClick={publish} disabled={busy || dirtyCount === 0}>
+          <button className="btn btn--primary" onClick={() => setConfirmPublish(true)} disabled={busy || dirtyCount === 0}>
             {busy ? <span className="saving"><span className="spinner" /> Publicando…</span> : "Publicar cambios"}
           </button>
         </div>
@@ -307,6 +308,33 @@ export default function VisualEditor({ initial }: { initial: RawData }) {
           )}
         </aside>
       </div>
+
+      {confirmPublish && (
+        <div className="ved" role="dialog" aria-modal="true">
+          <div className="confirm__overlay" onClick={() => setConfirmPublish(false)} />
+          <div className="confirm">
+            <h3>¿Publicar los cambios?</h3>
+            <p>
+              Los cambios se aplicarán a la página original de inmediato. Esta acción no se puede
+              deshacer automáticamente.
+            </p>
+            <div className="confirm__actions">
+              <button className="btn btn--outline" onClick={() => setConfirmPublish(false)}>
+                Cancelar
+              </button>
+              <button
+                className="btn btn--primary"
+                onClick={() => {
+                  setConfirmPublish(false);
+                  publish();
+                }}
+              >
+                Sí, publicar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
