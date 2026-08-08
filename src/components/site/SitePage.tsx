@@ -355,7 +355,7 @@ export default function SitePage({
           <Header slug="cotiza" meta={d.secciones.cotiza} />
           <div className="row justify-content-center">
             <div className="col-lg-10">
-              <div className="quote__form reveal">
+              <div className={cls("quote__form reveal")}>
                 <p className="text-center text-muted mb-4">Completa tus datos y te contactaremos a la brevedad</p>
                 <div className="row g-3">
                   <div className="col-md-6">
