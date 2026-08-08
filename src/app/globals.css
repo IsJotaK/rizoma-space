@@ -173,6 +173,7 @@ button { font-family: inherit; }
 .content:has(.ved) { max-width: none; width: 100%; padding: 16px 20px; }
 .ved__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
 .ved__head-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.ved__head { padding-right: 400px; }
 .ved__dirty { font-size: 13px; font-weight: 600; color: var(--green-700); background: var(--green-100); padding: 7px 12px; border-radius: 20px; }
 .ved__ver { font-size: 12px; font-weight: 600; color: var(--green-800); background: var(--green-100); border: 1px solid var(--green-300); padding: 5px 10px; border-radius: 20px; }
 .ved__dirty.is-dirty { color: #92400e; background: #fef3c7; }
@@ -213,6 +214,7 @@ button { font-family: inherit; }
 @media (max-width: 1100px) {
   .ved { height: auto; }
   .ved__body { flex-direction: column; flex: none; }
+  .ved__head { padding-right: 0; }
   .ved__panel { width: 100%; height: auto; max-height: 55vh; position: static; right: auto; top: auto; bottom: auto; }
   .ved__canvas { height: 70vh; min-height: 420px; position: static; margin-right: 0; }
 }
