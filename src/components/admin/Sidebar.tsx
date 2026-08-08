@@ -7,6 +7,7 @@ import { signOut } from "@/lib/actions";
 
 const NAV = [
   { href: "/admin", key: "home", label: "Dashboard", icon: "🏠", exact: true },
+  { href: "/admin/editor", key: "editor", label: "Editor visual", icon: "✍️", exact: true },
 ];
 
 const SECTIONS = [

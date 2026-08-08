@@ -39,6 +39,15 @@ export default async function DashboardPage() {
         <p style={{ margin: 0, color: "rgba(255,255,255,.8)", fontSize: 14 }}>
           Haz cambios, presiona «Guardar cambios» y la página pública se actualizará al guardar.
         </p>
+        <Link
+          href="/admin/editor"
+          style={{
+            display: "inline-flex", marginTop: 14, background: "#2ecc71", color: "#0d3b1e",
+            fontWeight: 700, padding: "10px 18px", borderRadius: 9, fontSize: 14,
+          }}
+        >
+          ✍️ Abrir Editor visual
+        </Link>
       </div>
 
       <div className="grid grid--2">
