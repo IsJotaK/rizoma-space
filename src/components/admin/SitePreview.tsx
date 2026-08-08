@@ -48,6 +48,7 @@ export default function SitePreview({
     <iframe
       ref={frameRef}
       src="/preview"
+      onLoad={send}
       title="Vista previa del sitio"
       className="ved__frame"
       style={{ width: "100%", height: "100%", border: 0, display: "block", background: "#fff" }}
