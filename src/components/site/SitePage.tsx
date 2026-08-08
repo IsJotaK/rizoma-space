@@ -1,4 +1,4 @@
-import { Icon, IconBaseProvider } from "@/app/(site)/icons";
+import { Icon, Sprite } from "@/app/(site)/icons";
 import type { SiteData, SeccionMeta } from "@/lib/site-assembly";
 
 export interface EditorSelection {
@@ -79,6 +79,7 @@ export default function SitePage({
 
   const page = (
     <div className={`site-render ${editMode ? "is-edit" : ""}`}>
+      <Sprite />
       <nav className="navbar fixed-top" id="header">
         <div className="container">
           <a className="navbar-brand" href="#">
@@ -561,9 +562,5 @@ export default function SitePage({
     </div>
   );
 
-  return editMode ? (
-    <IconBaseProvider value="">{page}</IconBaseProvider>
-  ) : (
-    page
-  );
+  return page;
 }

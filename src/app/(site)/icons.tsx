@@ -1,8 +1,6 @@
 "use client";
 
-import { createContext, useContext } from "react";
-
-export const SPRITE = "/icons.svg";
+import { SPRITE_DEFS } from "@/components/site/sprite";
 
 const ICON_PARTS: Record<string, string[]> = {
   shield: ["i-shield"],
@@ -33,11 +31,15 @@ const ICON_PARTS: Record<string, string[]> = {
   hamburger: ["i-hamburger"],
 };
 
-const IconBaseContext = createContext<string>(SPRITE);
-
-/** Permite usar el sprite de forma local (sin ruta externa) dentro de shadow DOM. */
-export function IconBaseProvider({ value, children }: { value: string; children: React.ReactNode }) {
-  return <IconBaseContext.Provider value={value}>{children}</IconBaseContext.Provider>;
+/** Sprite oculto con todos los símbolos, incrustado en el DOM. */
+export function Sprite() {
+  return (
+    <svg
+      aria-hidden="true"
+      style={{ position: "absolute", width: 0, height: 0, overflow: "hidden" }}
+      dangerouslySetInnerHTML={{ __html: SPRITE_DEFS }}
+    />
+  );
 }
 
 export function Icon({
@@ -47,17 +49,14 @@ export function Icon({
   name?: string;
   className?: string;
 }) {
-  const base = useContext(IconBaseContext);
   const parts = (name && ICON_PARTS[name]) || [];
   if (parts.length === 0) return null;
   const cls = ["icon", className].filter(Boolean).join(" ");
   return (
     <svg className={cls} viewBox="0 0 24 24" aria-hidden="true">
       {parts.map((id) => (
-        <use key={id} href={`${base}#${id}`} />
+        <use key={id} href={`#${id}`} />
       ))}
     </svg>
   );
 }
-
-export { ICON_PARTS };
