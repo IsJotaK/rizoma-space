@@ -28,12 +28,13 @@ const LANDING_VARS: Record<string, string> = {
 };
 
 const EDITOR_CSS = `
+:host{display:block;transform:translateZ(0);font-family:var(--sans);color:#1a1a2e;line-height:1.6}
+.site-render.is-edit{min-width:1200px}
 .editor-sel{outline:2px solid #2ecc71;outline-offset:2px;cursor:pointer;position:relative;box-shadow:0 0 0 6px rgba(46,204,113,.12)}
 [data-ed-inactive="true"]{opacity:.5}
 [data-ed-inactive="true"]::after{content:"oculto";position:absolute;top:4px;right:4px;background:rgba(0,0,0,.65);color:#fff;font-size:10px;font-weight:600;padding:2px 6px;border-radius:6px;z-index:10;font-family:system-ui,sans-serif}
 .site-render.is-edit{cursor:pointer}
 .site-render.is-edit a{cursor:pointer}
-:host{display:block;transform:translateZ(0)}
 .site-render.is-edit .navbar,
 .site-render.is-edit .navbar.fixed-top{
   position:sticky !important;top:0;left:0;right:0;width:100%;
