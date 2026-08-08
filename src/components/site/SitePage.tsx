@@ -1,4 +1,4 @@
-import { Icon } from "@/app/(site)/icons";
+import { Icon, IconBaseProvider } from "@/app/(site)/icons";
 import type { SiteData, SeccionMeta } from "@/lib/site-assembly";
 
 export interface EditorSelection {
@@ -77,7 +77,7 @@ export default function SitePage({
     );
   }
 
-  return (
+  const page = (
     <div className={`site-render ${editMode ? "is-edit" : ""}`}>
       <nav className="navbar fixed-top" id="header">
         <div className="container">
@@ -559,5 +559,11 @@ export default function SitePage({
         <Icon name="whatsapp" className="icon--whatsapp" />
       </a>
     </div>
+  );
+
+  return editMode ? (
+    <IconBaseProvider value="">{page}</IconBaseProvider>
+  ) : (
+    page
   );
 }

@@ -71,6 +71,9 @@ export default function SitePreview({
           css +
           EDITOR_CSS;
         shadow.appendChild(style);
+      })
+      .finally(() => {
+        injectSprite(shadow);
         setReady(true);
       });
   }, []);
@@ -85,4 +88,19 @@ export default function SitePreview({
         : <div className="editor-preview__loading">Cargando vista previa…</div>}
     </div>
   );
+}
+
+function injectSprite(shadow: ShadowRoot) {
+  fetch("/icons.svg")
+    .then((r) => (r.ok ? r.text() : ""))
+    .then((txt) => {
+      if (!txt) return;
+      const holder = document.createElement("div");
+      holder.innerHTML = txt;
+      const svg = holder.querySelector("svg");
+      if (!svg) return;
+      svg.setAttribute("style", "position:absolute;width:0;height:0;overflow:hidden");
+      shadow.appendChild(svg);
+    })
+    .catch(() => {});
 }

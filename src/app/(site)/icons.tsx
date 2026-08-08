@@ -1,4 +1,8 @@
-const SPRITE = "/icons.svg";
+"use client";
+
+import { createContext, useContext } from "react";
+
+export const SPRITE = "/icons.svg";
 
 const ICON_PARTS: Record<string, string[]> = {
   shield: ["i-shield"],
@@ -29,6 +33,13 @@ const ICON_PARTS: Record<string, string[]> = {
   hamburger: ["i-hamburger"],
 };
 
+const IconBaseContext = createContext<string>(SPRITE);
+
+/** Permite usar el sprite de forma local (sin ruta externa) dentro de shadow DOM. */
+export function IconBaseProvider({ value, children }: { value: string; children: React.ReactNode }) {
+  return <IconBaseContext.Provider value={value}>{children}</IconBaseContext.Provider>;
+}
+
 export function Icon({
   name,
   className = "",
@@ -36,14 +47,17 @@ export function Icon({
   name?: string;
   className?: string;
 }) {
+  const base = useContext(IconBaseContext);
   const parts = (name && ICON_PARTS[name]) || [];
   if (parts.length === 0) return null;
   const cls = ["icon", className].filter(Boolean).join(" ");
   return (
     <svg className={cls} viewBox="0 0 24 24" aria-hidden="true">
       {parts.map((id) => (
-        <use key={id} href={`${SPRITE}#${id}`} />
+        <use key={id} href={`${base}#${id}`} />
       ))}
     </svg>
   );
 }
+
+export { ICON_PARTS };
