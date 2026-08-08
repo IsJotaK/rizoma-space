@@ -9,6 +9,8 @@ interface Sel {
   slug?: string;
 }
 
+const FRAME_WIDTH = 1280;
+
 export default function SitePreview({
   data,
   selected,
@@ -51,7 +53,7 @@ export default function SitePreview({
       onLoad={send}
       title="Vista previa del sitio"
       className="ved__frame"
-      style={{ width: "100%", height: "100%", border: 0, display: "block", background: "#fff" }}
+      style={{ width: FRAME_WIDTH, height: "100%", border: 0, display: "block", background: "#fff" }}
     />
   );
 }
