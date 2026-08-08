@@ -33,6 +33,7 @@ const EDITOR_CSS = `
 [data-ed-inactive="true"]::after{content:"oculto";position:absolute;top:4px;right:4px;background:rgba(0,0,0,.65);color:#fff;font-size:10px;font-weight:600;padding:2px 6px;border-radius:6px;z-index:10;font-family:system-ui,sans-serif}
 .site-render.is-edit{cursor:pointer}
 .site-render.is-edit a{cursor:pointer}
+:host{display:block;transform:translateZ(0)}
 .site-render.is-edit .navbar,
 .site-render.is-edit .navbar.fixed-top{
   position:sticky !important;top:0;left:0;right:0;width:100%;
