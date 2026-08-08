@@ -230,6 +230,7 @@ export default function VisualEditor({ initial }: { initial: RawData }) {
           </p>
         </div>
         <div className="ved__head-actions">
+          <span className="ved__ver">preview: iframe</span>
           <span className={`ved__dirty ${dirtyCount ? "is-dirty" : ""}`}>
             {dirtyCount ? `${dirtyCount} bloque(s) sin publicar` : "Sin cambios"}
           </span>
