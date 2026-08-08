@@ -16,6 +16,12 @@ export default function ImageField({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const src = value
+    ? /^(https?:)?\/\//.test(value) || value.startsWith("data:")
+      ? value
+      : `/${value.replace(/^\//, "")}`
+    : undefined;
+
   async function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -75,7 +81,7 @@ export default function ImageField({
           <div className="previews">
             <div className="thumb">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={value} alt="" />
+              <img src={src} alt="" />
             </div>
           </div>
         ) : (

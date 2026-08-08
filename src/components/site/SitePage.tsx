@@ -28,6 +28,12 @@ function sectionTitle(text?: string) {
 
 const rv = (edit: boolean) => (c: string) => (edit ? c.split(" reveal").join("") : c);
 
+function assetImg(url?: string) {
+  if (!url) return "";
+  if (/^(https?:)?\/\/|^data:/.test(url)) return url;
+  return "/" + url.replace(/^\/+/, "");
+}
+
 export default function SitePage({
   data: d,
   editMode = false,
@@ -126,7 +132,7 @@ export default function SitePage({
 
       {/* Portada */}
       <section className="hero" id="inicio">
-        <div className="hero__bg" style={{ backgroundImage: `url('${d.hero.imagen_escritorio}')` }} />
+        <div className="hero__bg" style={{ backgroundImage: `url('${assetImg(d.hero.imagen_escritorio)}')` }} />
         <div className="hero__overlay" />
         <div className="hero__pattern" />
         <div className="container">
@@ -341,7 +347,7 @@ export default function SitePage({
                   key={i}
                   {...sel("galeria", g.id, undefined, g.activo)}
                 >
-                  <img src={g.file_url} alt={g.titulo || "Trabajo Rizoma Space"} loading="lazy" />
+                  <img src={assetImg(g.file_url)} alt={g.titulo || "Trabajo Rizoma Space"} loading="lazy" />
                 </a>
               ))}
             </div>
