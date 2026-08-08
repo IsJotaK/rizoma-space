@@ -56,7 +56,7 @@ export default function SitePage({
           "data-ed-id": id ?? null,
           "data-ed-slug": slug,
           "data-ed-inactive": active === false ? "true" : undefined,
-          className: match ? "editor-sel" : undefined,
+          "data-ed-selected": match ? "true" : undefined,
           onClick: onSelect
             ? (e: React.MouseEvent) => {
                 e.preventDefault();
