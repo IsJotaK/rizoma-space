@@ -170,21 +170,22 @@ button { font-family: inherit; }
 
 /* ---------- Editor visual ---------- */
 .ved { display: flex; flex-direction: column; gap: 16px; }
+.content:has(.ved) { max-width: none; width: 100%; padding: 16px 20px; }
 .ved__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
 .ved__head-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .ved__dirty { font-size: 13px; font-weight: 600; color: var(--green-700); background: var(--green-100); padding: 7px 12px; border-radius: 20px; }
 .ved__dirty.is-dirty { color: #92400e; background: #fef3c7; }
-.ved__body { display: flex; gap: 20px; align-items: flex-start; max-width: 1400px; }
+.ved__body { display: flex; gap: 20px; align-items: stretch; width: 100%; }
 .ved__canvas {
   flex: 1; min-width: 0; background: #fff; border: 1px solid var(--line);
-  border-radius: var(--radius); overflow: auto; max-height: calc(100vh - 210px); position: sticky; top: 18px;
+  border-radius: var(--radius); overflow: auto; height: calc(100vh - 150px); position: sticky; top: 0;
 }
-.editor-preview { min-width: 640px; }
+.editor-preview { min-height: 100%; }
 .editor-preview__loading { padding: 70px 20px; text-align: center; color: var(--muted); font-size: 14px; }
 .ved__panel {
-  width: 340px; flex-shrink: 0; background: #fff; border: 1px solid var(--line);
-  border-radius: var(--radius); padding: 20px; max-height: calc(100vh - 210px);
-  overflow: auto; position: sticky; top: 18px; box-shadow: var(--shadow);
+  width: 360px; flex-shrink: 0; background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 20px; height: calc(100vh - 150px);
+  overflow: auto; position: sticky; top: 0; box-shadow: var(--shadow);
 }
 .ved__empty { color: var(--muted); text-align: center; padding: 40px 10px; font-size: 14px; }
 .ved__empty-icon { font-size: 30px; margin-bottom: 10px; }
@@ -201,7 +202,6 @@ button { font-family: inherit; }
 .switch-label { font-size: 13px; color: var(--ink); font-weight: 600; }
 @media (max-width: 1100px) {
   .ved__body { flex-direction: column; }
-  .ved__panel { width: 100%; max-height: none; position: static; }
-  .ved__canvas { max-height: 72vh; position: static; }
-  .editor-preview { min-width: 0; }
+  .ved__panel { width: 100%; height: auto; max-height: 60vh; position: static; }
+  .ved__canvas { height: 72vh; position: static; }
 }

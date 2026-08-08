@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { assembleSiteData, type RawData } from "@/lib/site-assembly";
 import { SECTION_META, ICONS } from "@/lib/section-config";
 import { saveRows, deleteRow } from "@/lib/actions";
@@ -77,6 +77,15 @@ export default function VisualEditor({ initial }: { initial: RawData }) {
   const [notice, setNotice] = useState<{ ok: boolean; msg: string } | null>(null);
 
   const data = useMemo(() => assembleSiteData(raw as unknown as RawData), [raw]);
+
+  useEffect(() => {
+    const h = initial.home_hero?.[0];
+    setSelected({
+      table: "home_hero",
+      id: h && typeof h.id === "number" ? h.id : null,
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const config = selected ? SECTION_META[TABLE_TO_KEY[selected.table]] : undefined;
   const single = selected ? !!SINGLE[selected.table] : false;
   const panelRow: Row | null = useMemo(() => {

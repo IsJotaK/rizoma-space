@@ -8,8 +8,16 @@ function isAllowed(table: string): table is TableName {
 export async function getRows(table: string): Promise<Row[]> {
   if (!isAllowed(table)) return [];
   const supabase = await createClient();
-  const { data } = await supabase.from(table).select("*").order("orden", { ascending: true });
-  return (data as Row[]) ?? [];
+  try {
+    const { data } = await supabase.from(table).select("*");
+    let rows = (data as Row[]) ?? [];
+    if (rows.length && rows.some((r) => typeof r.orden === "number")) {
+      rows = rows.sort((a, b) => (Number(a.orden) || 0) - (Number(b.orden) || 0));
+    }
+    return rows;
+  } catch {
+    return [];
+  }
 }
 
 export async function getRowsForTable(table: string): Promise<Row[]> {
