@@ -75,6 +75,7 @@ export default function VisualEditor({ initial }: { initial: RawData }) {
   const [selected, setSelected] = useState<Sel | null>(null);
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState<{ ok: boolean; msg: string } | null>(null);
+  const [deleted, setDeleted] = useState<{ table: string; id: number }[]>([]);
 
   const data = useMemo(() => assembleSiteData(raw as unknown as RawData), [raw]);
 
@@ -132,7 +133,7 @@ export default function VisualEditor({ initial }: { initial: RawData }) {
     setNotice(null);
   }
 
-  async function removeSelected() {
+  function removeSelected() {
     if (!selected || single) return;
     const table = selected.table;
     const arr = raw[table];
@@ -140,11 +141,7 @@ export default function VisualEditor({ initial }: { initial: RawData }) {
     if (idx < 0) return;
     const rowId = typeof arr[idx].id === "number" ? (arr[idx].id as number) : undefined;
     if (rowId !== undefined && rowId >= 0) {
-      const res = await deleteRow(table, rowId);
-      if (!res.ok) {
-        setNotice({ ok: false, msg: res.error || "Error al eliminar." });
-        return;
-      }
+      setDeleted((prev) => [...prev, { table, id: rowId }]);
     }
     setRaw((prev) => ({
       ...prev,
@@ -171,6 +168,16 @@ export default function VisualEditor({ initial }: { initial: RawData }) {
   async function publish() {
     setBusy(true);
     setNotice(null);
+
+    for (const d of deleted) {
+      const res = await deleteRow(d.table, d.id);
+      if (!res.ok) {
+        setBusy(false);
+        setNotice({ ok: false, msg: res.error || "Error al eliminar." });
+        return;
+      }
+    }
+
     const tables = Object.keys(dirty);
     for (const table of tables) {
       const key = TABLE_TO_KEY[table];
@@ -216,6 +223,7 @@ export default function VisualEditor({ initial }: { initial: RawData }) {
 
   function discard() {
     setRaw(clone(baseRef.current));
+    setDeleted([]);
     setSelected(null);
     setNotice(null);
   }
